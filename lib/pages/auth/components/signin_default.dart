@@ -1,3 +1,4 @@
+import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
 import '../../../routes/app_routes.dart';
 
@@ -11,13 +12,42 @@ class SignInDefault extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        elevation: 5,
+        shape: const BeveledRectangleBorder(),
+        backgroundColor: Colors.black87,
+        onPressed: () {
+          Navigator.pushNamed(context, AppRoutes.signinError);
+        },
+        label: const Row(
+          children: [
+            Text(
+              "SIGN IN",
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Mulish'),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              size: 20,
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: [
           Container(
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/first_img.jpeg"),
-                    fit: BoxFit.cover)),
+              image: DecorationImage(
+                  image: AssetImage("assets/images/first_img.jpeg"),
+                  fit: BoxFit.cover),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 195),
@@ -68,61 +98,12 @@ class SignInDefault extends StatelessWidget {
                       ),
                     ),
                   ),
-                  const SizedBox(
-                    height: 40,
-                  ),
-                  const SignInButton(),
                 ],
               ),
             ),
           ),
         ],
       ),
-    );
-  }
-}
-
-class SignInButton extends StatelessWidget {
-  const SignInButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        SizedBox(
-          height: 50,
-          width: 127,
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, AppRoutes.signinError);
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.black,
-              padding: const EdgeInsets.all(15),
-              textStyle: const TextStyle(
-                  fontFamily: 'Mulish', fontSize: 20, color: Colors.white),
-            ),
-            child: const Row(
-              children: [
-                Text(
-                  "SIGN IN",
-                  style: TextStyle(color: Colors.white),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 20,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
     );
   }
 }
@@ -141,18 +122,36 @@ class PasswordTextformfield extends StatelessWidget {
       width: 320,
       height: 40,
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.circular(3),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: TextFormField(
-          controller: _passwordController,
-          keyboardType: TextInputType.emailAddress,
-          obscureText: true,
-          decoration: const InputDecoration(
-              border: InputBorder.none, hintText: 'Password'),
-        ),
+      child: Column(
+        children: [
+          BlurryContainer(
+            blur: 2,
+            padding: EdgeInsets.zero,
+            borderRadius: BorderRadius.circular(3),
+            child: Container(
+              width: 320,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
+                  controller: _passwordController,
+                  keyboardType: TextInputType.emailAddress,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Password',
+                      hintStyle: TextStyle(color: Colors.white60)),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -172,17 +171,35 @@ class EmailTextformfield extends StatelessWidget {
       width: 320,
       height: 40,
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.circular(3),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: TextFormField(
-          controller: _emailController,
-          obscureText: false,
-          decoration: const InputDecoration(
-              border: InputBorder.none, hintText: 'Username or email'),
-        ),
+      child: Column(
+        children: [
+          BlurryContainer(
+            blur: 2,
+            padding: EdgeInsets.zero,
+            borderRadius: BorderRadius.circular(3),
+            child: Container(
+              width: 320,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10.0),
+                child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
+                  controller: _emailController,
+                  obscureText: false,
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Username or email',
+                      hintStyle: TextStyle(color: Colors.white60)),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

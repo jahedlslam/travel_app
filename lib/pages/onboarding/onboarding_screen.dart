@@ -67,7 +67,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     ),
                     ElevatedButton(
                       onPressed: () {
-                        Navigator.pushNamed(context, AppRoutes.signinDefault);
+                        Navigator.pushNamed(context, AppRoutes.menu);
                       },
                       style: ElevatedButton.styleFrom(
                         backgroundColor: Colors.black,

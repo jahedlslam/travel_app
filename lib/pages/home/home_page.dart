@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/models/discovery_section_model.dart';
 import 'package:travel_app/models/placecard_model.dart';
+import 'package:travel_app/routes/app_routes.dart';
 import '../../models/placelist_model.dart';
 import 'components/discovery_section.dart';
 import 'components/place_card.dart';
@@ -25,7 +26,7 @@ class _HomePageState extends State<HomePage> {
       case 0:
         return 0;
       case 1:
-        return 92;
+        return 100;
       default:
         return 0;
     }
@@ -34,9 +35,9 @@ class _HomePageState extends State<HomePage> {
   double changeContainerWidth() {
     switch (current) {
       case 0:
-        return 65;
+        return 60;
       case 1:
-        return 70;
+        return 60;
       default:
         return 0;
     }
@@ -81,18 +82,54 @@ class _HomePageState extends State<HomePage> {
                 ),
               ),
               SizedBox(
-                height: 300,
+                height: 310,
                 width: double.infinity,
-                child: ListView.builder(
+                child: ListView(
                   scrollDirection: Axis.horizontal,
-                  itemCount: placeCardlist.length,
-                  itemBuilder: (context, index) {
-                    return PlaceCard(data: placeCardlist[index]);
-                  },
+                  children: [
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.placeDetail);
+                      },
+                      child: PlaceCard(
+                        data: placeCard[0],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.placeDetail);
+                      },
+                      child: PlaceCard(
+                        data: placeCard[1],
+                      ),
+                    ),
+                    GestureDetector(
+                      onTap: () {
+                        Navigator.pushNamed(context, AppRoutes.placeDetail);
+                      },
+                      child: PlaceCard(
+                        data: placeCard[2],
+                      ),
+                    ),
+                  ],
                 ),
+
+                // child: ListView.builder(
+                //   scrollDirection: Axis.horizontal,
+                //   itemCount: placeCardlist.length,
+                //   itemBuilder: (context, index) {
+                //     return InkWell(
+                //         onTap: () {
+                //           Navigator.pushNamed(context, AppRoutes.placeDetail);
+                //         },
+                //         child: PlaceCard(data: placeCardlist[index]));
+                //   },
+                // ),
               ),
-              Align(
-                alignment: Alignment.topRight,
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 280,
+                ),
                 child: TextButton(
                   onPressed: () {},
                   child: const Text(
@@ -137,8 +174,10 @@ class _HomePageState extends State<HomePage> {
                                     child: Text(
                                       tabs[index],
                                       style: TextStyle(
-                                          color: Colors.black,
-                                          fontSize: current == index ? 23 : 22,
+                                          color: current == index
+                                              ? Colors.black
+                                              : Colors.grey,
+                                          fontSize: current == index ? 25 : 22,
                                           fontWeight: current == index
                                               ? FontWeight.w800
                                               : FontWeight.w600),
@@ -152,14 +191,14 @@ class _HomePageState extends State<HomePage> {
                         AnimatedPositioned(
                           left: changePositionedofLine(),
                           curve: Curves.fastLinearToSlowEaseIn,
-                          duration: const Duration(milliseconds: 500),
+                          duration: const Duration(milliseconds: 800),
                           bottom: 0,
                           child: AnimatedContainer(
                             curve: Curves.fastLinearToSlowEaseIn,
                             margin: const EdgeInsets.only(left: 20),
-                            duration: const Duration(milliseconds: 500),
+                            duration: const Duration(milliseconds: 800),
                             width: changeContainerWidth(),
-                            height: size.height * 0.008,
+                            height: size.height * 0.005,
                             decoration: BoxDecoration(
                                 borderRadius: BorderRadius.circular(10),
                                 color: Colors.black),
@@ -172,18 +211,58 @@ class _HomePageState extends State<HomePage> {
                     padding: const EdgeInsets.only(top: 5),
                     child: //Text("${tabs[current]} tab content"),
                         Expanded(
+                      // child: ListView(
+                      //   scrollDirection: Axis.horizontal,
+                      //   children: [
+                      //     GestureDetector(
+                      //       onTap: () {
+                      //         // Navigator.pushNamed(
+                      //         //     context, AppRoutes.placeDetail);
+                      //       },
+                      //       child: Padding(
+                      //         padding: const EdgeInsets.only(top: 10.0),
+                      //         child: PlaceList(data: placeList[0]),
+                      //       ),
+                      //     ),
+                      //     GestureDetector(
+                      //       onTap: () {
+                      //         // Navigator.pushNamed(
+                      //         //     context, AppRoutes.placeDetail);
+                      //       },
+                      //       child: Padding(
+                      //         padding: const EdgeInsets.only(top: 10.0),
+                      //         child: PlaceList(data: placeList[1]),
+                      //       ),
+                      //     ),
+                      //     GestureDetector(
+                      //       onTap: () {
+                      //         // Navigator.pushNamed(
+                      //         //     context, AppRoutes.placeDetail);
+                      //       },
+                      //       child: Padding(
+                      //         padding: const EdgeInsets.only(top: 10.0),
+                      //         child: PlaceList(data: placeList[2]),
+                      //       ),
+                      //     ),
+                      //  ],
+                      // ),
                       child: ListView.builder(
                         itemCount: placeList.length,
                         physics: const NeverScrollableScrollPhysics(),
                         shrinkWrap: true,
                         itemBuilder: (context, index) {
-                          return PlaceList(data: placeList[index]);
+                          return Padding(
+                            padding: const EdgeInsets.only(top: 10.0),
+                            child: PlaceList(data: placeList[index]),
+                          );
                         },
                       ),
                     ),
                   ),
-                  Align(
-                    alignment: Alignment.topRight,
+                  Padding(
+                    padding: const EdgeInsets.only(
+                      left: 280,
+                    ),
                     child: TextButton(
                       onPressed: () {},
                       child: const Text(
@@ -200,37 +279,62 @@ class _HomePageState extends State<HomePage> {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  Padding(
-                    padding: const EdgeInsets.only(left: 20.0),
+                  const Padding(
+                    padding: EdgeInsets.only(left: 20.0),
                     child: Text(
                       "Discovery",
                       style: TextStyle(
                           color: Colors.black,
                           fontWeight: FontWeight.bold,
-                          fontSize: 25,
+                          fontSize: 30,
                           fontFamily: 'Mulish'),
                     ),
                   ),
-                  SizedBox(
+                  const SizedBox(
                     height: 20,
                   ),
                   SizedBox(
                     height: 240,
                     width: double.infinity,
-                    child: ListView.builder(
-                        scrollDirection: Axis.horizontal,
-                        shrinkWrap: true,
-                        itemCount: discoverySection.length,
-                        itemBuilder: (context, index) {
-                          return DiscoverySection(
-                            data: discoverySection[index],
-                          );
-                        }),
+                    child: ListView(
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, AppRoutes.discoveryAsia);
+                          },
+                          child: DiscoverySection(
+                            data: discoverySection[0],
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, AppRoutes.discoveryEurope);
+                          },
+                          child: DiscoverySection(
+                            data: discoverySection[1],
+                          ),
+                        ),
+                        GestureDetector(
+                          onTap: () {
+                            Navigator.pushNamed(
+                                context, AppRoutes.discoveryAmerica);
+                          },
+                          child: DiscoverySection(
+                            data: discoverySection[2],
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ],
               ),
-              Align(
-                alignment: Alignment.topRight,
+              Padding(
+                padding: const EdgeInsets.only(
+                  left: 280,
+                ),
                 child: TextButton(
                   onPressed: () {},
                   child: const Text(
@@ -258,13 +362,18 @@ class MenuIcon extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
-      onTap: () {},
+      onTap: () {
+        Navigator.pushNamed(context, AppRoutes.menu);
+      },
       child: Container(
         padding: const EdgeInsets.all(7),
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(5),
-            color: Colors.white,
-            boxShadow: const [BoxShadow(color: Colors.black26, blurRadius: 5)]),
+          borderRadius: BorderRadius.circular(5),
+          color: Colors.white,
+          boxShadow: const [
+            BoxShadow(color: Colors.black26, blurRadius: 5),
+          ],
+        ),
         child: const Icon(
           Icons.sort_rounded,
           color: Colors.black,
@@ -285,3 +394,18 @@ class MenuIcon extends StatelessWidget {
                         },
                       ),
                     ), */
+                    /**
+                  SizedBox(
+                    height: 240,
+                    width: double.infinity,
+                    child: ListView.builder(
+                      scrollDirection: Axis.horizontal,
+                      shrinkWrap: true,
+                      itemCount: discoverySection.length,
+                      itemBuilder: (context, index) {
+                        return DiscoverySection(
+                          data: discoverySection[index],
+                        );
+                      },
+                    ),
+                  ), */

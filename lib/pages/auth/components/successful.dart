@@ -8,13 +8,42 @@ class Successful extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        elevation: 5,
+        shape: const BeveledRectangleBorder(),
+        backgroundColor: Colors.black87,
+        onPressed: () {
+          Navigator.pushNamed(context, AppRoutes.signUp);
+        },
+        label: const Row(
+          children: [
+            Text(
+              "GET START",
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Mulish'),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              size: 20,
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: [
           Container(
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/first_img.jpeg"),
-                    fit: BoxFit.cover)),
+              image: DecorationImage(
+                  image: AssetImage("assets/images/first_img.jpeg"),
+                  fit: BoxFit.cover),
+            ),
           ),
           const Padding(
             padding: EdgeInsets.only(top: 200),
@@ -30,10 +59,6 @@ class Successful extends StatelessWidget {
                     height: 45,
                   ),
                   MiddleSection(),
-                  SizedBox(
-                    height: 330,
-                  ),
-                  GetStartButton(),
                 ],
               ),
             ),
@@ -115,47 +140,6 @@ class HeadingSection extends StatelessWidget {
           fontFamily: 'Mulish',
         ),
       ),
-    );
-  }
-}
-
-class GetStartButton extends StatelessWidget {
-  const GetStartButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.signUp);
-          },
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black,
-            padding: const EdgeInsets.all(15),
-            textStyle: const TextStyle(
-                fontFamily: 'Mulish', fontSize: 20, color: Colors.white),
-          ),
-          child: const Row(
-            children: [
-              Text(
-                "GET START",
-                style: TextStyle(color: Colors.white),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Icon(
-                Icons.arrow_forward_ios,
-                size: 20,
-              ),
-            ],
-          ),
-        ),
-      ],
     );
   }
 }

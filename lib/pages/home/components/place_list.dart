@@ -8,199 +8,220 @@ class PlaceList extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.only(top: 10.0, right: 20, left: 20),
-      child: Container(
-        width: 350,
-        height: 150,
-        decoration: const BoxDecoration(
-          borderRadius: BorderRadius.only(
-            bottomLeft: Radius.circular(10),
-            bottomRight: Radius.circular(10),
+    return Stack(
+      children: [
+        Container(
+          margin: const EdgeInsets.fromLTRB(35, 5, 15, 5),
+          width: double.infinity,
+          height: 150,
+          decoration: const BoxDecoration(
+            color: Colors.white,
+            boxShadow: [
+              BoxShadow(
+                  offset: Offset(-1, 8),
+                  blurRadius: 10,
+                  spreadRadius: 1,
+                  color: Colors.grey),
+            ],
+            borderRadius: BorderRadius.only(
+              bottomLeft: Radius.circular(10),
+              bottomRight: Radius.circular(10),
+            ),
           ),
-        ),
-        child: Column(
-          mainAxisAlignment: MainAxisAlignment.center,
-          children: [
-            Row(
+          child: Padding(
+            padding: const EdgeInsets.fromLTRB(90.0, 0.0, 0.0, 20.0),
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                ClipRRect(
-                  borderRadius: BorderRadius.circular(10),
-                  child: SizedBox(
-                    height: 125,
-                    width: 96,
-                    child: Container(
-                      decoration: BoxDecoration(
-                          borderRadius: BorderRadius.circular(10),
-                          gradient: LinearGradient(
-                              begin: Alignment.bottomRight,
-                              stops: const [
-                                0.1,
-                                0.9
-                              ],
-                              colors: [
-                                Colors.black.withOpacity(.8),
-                                Colors.black.withOpacity(.2),
-                              ])),
-                      child: Image.network(
-                        data.image,
-                        fit: BoxFit.cover,
-                      ),
+                Column(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const SizedBox(
+                      height: 8,
                     ),
-                  ),
-                ),
-                const SizedBox(
-                  width: 20,
-                ),
-                SizedBox(
-                  height: 130,
-                  width: 230,
-                  child: Column(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.start,
-                    children: [
-                      Text(
-                        data.countryName,
-                        style: const TextStyle(
-                            color: Colors.black,
-                            fontFamily: 'Mulish',
-                            fontSize: 22,
-                            fontWeight: FontWeight.w800),
+                    Text(
+                      data.countryName,
+                      style: const TextStyle(
+                          color: Colors.black,
+                          fontFamily: 'Mulish',
+                          fontSize: 22,
+                          fontWeight: FontWeight.w800),
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    RatingBar.builder(
+                      initialRating: 4,
+                      minRating: 1,
+                      direction: Axis.horizontal,
+                      allowHalfRating: true,
+                      itemCount: 5,
+                      itemSize: 15,
+                      unratedColor: Colors.grey,
+                      itemPadding: const EdgeInsets.symmetric(horizontal: 2.0),
+                      itemBuilder: (context, _) => const Icon(
+                        Icons.star,
+                        color: Colors.amber,
                       ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      RatingBar.builder(
-                        initialRating: 4,
-                        minRating: 1,
-                        direction: Axis.horizontal,
-                        allowHalfRating: true,
-                        itemCount: 5,
-                        itemSize: 15,
-                        unratedColor: Colors.grey,
-                        itemPadding:
-                            const EdgeInsets.symmetric(horizontal: 2.0),
-                        itemBuilder: (context, _) => const Icon(
-                          Icons.star,
-                          color: Colors.amber,
+                      onRatingUpdate: (rating) {},
+                    ),
+                    const SizedBox(
+                      height: 5,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          height: 16,
+                          width: 16,
+                          child: Image.asset(
+                            "assets/icons/takeoff-the-plane.png",
+                            color: Colors.grey,
+                          ),
                         ),
-                        onRatingUpdate: (rating) {},
-                      ),
-                      const SizedBox(
-                        height: 5,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        RichText(
+                          text: TextSpan(
                             children: [
-                              SizedBox(
-                                height: 16,
-                                width: 16,
-                                child: Image.asset(
-                                  "assets/icons/takeoff-the-plane.png",
+                              TextSpan(
+                                text: '${data.placeName} - ',
+                                style: const TextStyle(
+                                    color: Colors.black, fontSize: 14),
+                              ),
+                              TextSpan(
+                                text: '${data.month}, ${data.year}',
+                                style: const TextStyle(
+                                    color: Colors.black, fontSize: 14),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ],
+                    ),
+                    const SizedBox(
+                      height: 10,
+                    ),
+                    Row(
+                      children: [
+                        SizedBox(
+                          height: 14,
+                          width: 14,
+                          child: Image.asset(
+                            "assets/icons/label.png",
+                            color: Colors.grey,
+                          ),
+                        ),
+                        const SizedBox(
+                          width: 10,
+                        ),
+                        Row(
+                          children: [
+                            Text(
+                              data.seat.toString(),
+                              style: const TextStyle(
                                   color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontSize: 14),
+                            ),
+                            const SizedBox(
+                              width: 10,
+                            ),
+                            const Text(
+                              "Seats remaining",
+                              style: TextStyle(
+                                  color: Colors.black,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Mulish',
+                                  fontSize: 14),
+                            ),
+                          ],
+                        ),
+                      ],
+                    ),
+                  ],
+                ),
+                Positioned(
+                  top: 0,
+                  right: 0,
+                  child: Column(
+                    mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                    crossAxisAlignment: CrossAxisAlignment.end,
+                    children: [
+                      Positioned(
+                        child: Column(
+                          children: [
+                            Container(
+                              width: 66,
+                              height: 18,
+                              decoration: BoxDecoration(
+                                  borderRadius: const BorderRadius.only(
+                                      bottomLeft: Radius.circular(5)),
+                                  color: data.color),
+                              child: Center(
+                                child: Text(
+                                  data.category,
+                                  style: TextStyle(
+                                      fontSize: 12,
+                                      color: data.fontColor,
+                                      fontFamily: 'Mulish',
+                                      fontWeight: FontWeight.bold),
                                 ),
                               ),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              RichText(
-                                text: TextSpan(
-                                  children: [
-                                    TextSpan(
-                                      text: '${data.placeName} - ',
-                                      style: const TextStyle(
-                                          color: Colors.black, fontSize: 14),
-                                    ),
-                                    TextSpan(
-                                      text: '${data.month}, ${data.year}',
-                                      style: const TextStyle(
-                                          color: Colors.black, fontSize: 14),
-                                    ),
-                                  ],
-                                ),
-                              ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                "\$${data.totalmoney}",
-                                style: const TextStyle(
-                                    color: Colors.grey,
-                                    fontWeight: FontWeight.bold,
-                                    fontFamily: 'Mulish',
-                                    fontSize: 13),
-                              ),
-                            ],
-                          ),
-                        ],
+                            ),
+                          ],
+                        ),
                       ),
-                      const SizedBox(
-                        height: 10,
-                      ),
-                      Row(
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
-                        children: [
-                          Row(
-                            children: [
-                              SizedBox(
-                                  height: 14,
-                                  width: 14,
-                                  child: Image.asset(
-                                    "assets/icons/label.png",
-                                    color: Colors.black,
-                                  )),
-                              const SizedBox(
-                                width: 10,
-                              ),
-                              Row(
-                                children: [
-                                  Text(
-                                    data.seat.toString(),
-                                    style: const TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontSize: 14),
-                                  ),
-                                  const SizedBox(
-                                    width: 10,
-                                  ),
-                                  const Text(
-                                    "Seats remaining",
-                                    style: TextStyle(
-                                        color: Colors.black,
-                                        fontWeight: FontWeight.bold,
-                                        fontFamily: 'Mulish',
-                                        fontSize: 14),
-                                  ),
-                                ],
-                              ),
-                            ],
-                          ),
-                          Row(
-                            children: [
-                              Text(
-                                "\$${data.discountMoney}",
-                                style: const TextStyle(
-                                    color: Colors.red,
-                                    fontWeight: FontWeight.w800,
-                                    fontFamily: 'Mulish',
-                                    fontSize: 18),
-                              ),
-                            ],
-                          ),
-                        ],
+                      Padding(
+                        padding: const EdgeInsets.only(right: 10.0, bottom: 15),
+                        child: Column(
+                          children: [
+                            Text(
+                              "\$${data.totalmoney}",
+                              style: const TextStyle(
+                                  color: Colors.grey,
+                                  fontWeight: FontWeight.bold,
+                                  fontFamily: 'Mulish',
+                                  fontSize: 13),
+                            ),
+                            const SizedBox(
+                              height: 5,
+                            ),
+                            Text(
+                              "\$${data.discountMoney}",
+                              style: const TextStyle(
+                                  color: Colors.red,
+                                  fontWeight: FontWeight.w800,
+                                  fontFamily: 'Mulish',
+                                  fontSize: 18),
+                            ),
+                          ],
+                        ),
                       ),
                     ],
                   ),
                 ),
               ],
             ),
-          ],
+          ),
         ),
-      ),
+        Positioned(
+          left: 20,
+          top: 15,
+          bottom: 15,
+          child: ClipRRect(
+            borderRadius: BorderRadius.circular(10),
+            child: SizedBox(
+              width: 96,
+              child: Image.network(
+                data.image,
+                fit: BoxFit.cover,
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

@@ -1,3 +1,4 @@
+import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
 import '../../../routes/app_routes.dart';
 
@@ -9,7 +10,8 @@ class SignUp extends StatefulWidget {
 }
 
 class _SignUpState extends State<SignUp> {
-  final _emailController = TextEditingController();
+  final _nameController = TextEditingController();
+  final _usernameController = TextEditingController();
   final _passwordController = TextEditingController();
 
   bool? isChecked = false;
@@ -17,6 +19,34 @@ class _SignUpState extends State<SignUp> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        elevation: 5,
+        shape: const BeveledRectangleBorder(),
+        backgroundColor: Colors.black87,
+        onPressed: () {
+          Navigator.pushNamed(context, AppRoutes.homePage);
+        },
+        label: const Row(
+          children: [
+            Text(
+              "DONE",
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Mulish'),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              size: 20,
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: [
           Container(
@@ -53,11 +83,11 @@ class _SignUpState extends State<SignUp> {
                   Column(
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: [
-                      NameTextformField(emailController: _emailController),
+                      NameTextformField(emailController: _nameController),
                       const SizedBox(
                         height: 25,
                       ),
-                      UsernameField(emailController: _emailController),
+                      UsernameField(emailController: _usernameController),
                       const SizedBox(
                         height: 25,
                       ),
@@ -78,10 +108,6 @@ class _SignUpState extends State<SignUp> {
                     height: 20,
                   ),
                   _checkingSection(),
-                  const SizedBox(
-                    height: 160,
-                  ),
-                  const DoneButton(),
                 ],
               ),
             ),
@@ -93,14 +119,16 @@ class _SignUpState extends State<SignUp> {
 
   Padding _checkingSection() {
     return Padding(
-      padding: const EdgeInsets.only(left: 30.0),
+      padding: const EdgeInsets.only(left: 30.0, bottom: 10),
       child: SizedBox(
         width: double.infinity,
         child: Row(
+          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Checkbox(
                 value: isChecked,
                 activeColor: Colors.grey,
+                checkColor: Colors.black,
                 tristate: true,
                 onChanged: (bool? newbool) {
                   setState(() {
@@ -145,52 +173,6 @@ class _SignUpState extends State<SignUp> {
   }
 }
 
-class DoneButton extends StatelessWidget {
-  const DoneButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        SizedBox(
-          height: 50,
-          width: 127,
-          child: ElevatedButton(
-            onPressed: () {
-              Navigator.pushNamed(context, AppRoutes.homePage);
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.black,
-              padding: const EdgeInsets.all(15),
-              textStyle: const TextStyle(
-                  fontFamily: 'Mulish', fontSize: 20, color: Colors.white),
-            ),
-            child: const Row(
-              mainAxisAlignment: MainAxisAlignment.end,
-              children: [
-                Text(
-                  "DONE",
-                  style: TextStyle(color: Colors.white),
-                ),
-                SizedBox(
-                  width: 10,
-                ),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 20,
-                ),
-              ],
-            ),
-          ),
-        ),
-      ],
-    );
-  }
-}
-
 class PasswordTextformField extends StatelessWidget {
   const PasswordTextformField({
     super.key,
@@ -205,18 +187,36 @@ class PasswordTextformField extends StatelessWidget {
       width: 320,
       height: 40,
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.circular(3),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: TextFormField(
-          controller: _passwordController,
-          keyboardType: TextInputType.emailAddress,
-          obscureText: true,
-          decoration: const InputDecoration(
-              border: InputBorder.none, hintText: 'Password'),
-        ),
+      child: Column(
+        children: [
+          BlurryContainer(
+            blur: 2,
+            padding: EdgeInsets.zero,
+            borderRadius: BorderRadius.circular(3),
+            child: Container(
+              width: 320,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
+                  controller: _passwordController,
+                  keyboardType: TextInputType.emailAddress,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Password',
+                      hintStyle: TextStyle(color: Colors.white70)),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -236,17 +236,35 @@ class UsernameField extends StatelessWidget {
       width: 320,
       height: 40,
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.circular(3),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: TextFormField(
-          controller: _emailController,
-          obscureText: false,
-          decoration: const InputDecoration(
-              border: InputBorder.none, hintText: 'Username'),
-        ),
+      child: Column(
+        children: [
+          BlurryContainer(
+            blur: 2,
+            padding: EdgeInsets.zero,
+            borderRadius: BorderRadius.circular(3),
+            child: Container(
+              width: 320,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
+                  controller: _emailController,
+                  obscureText: false,
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Username',
+                      hintStyle: TextStyle(color: Colors.white70)),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }
@@ -266,17 +284,35 @@ class NameTextformField extends StatelessWidget {
       width: 320,
       height: 40,
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.circular(3),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: TextFormField(
-          controller: _emailController,
-          obscureText: false,
-          decoration:
-              const InputDecoration(border: InputBorder.none, hintText: 'Name'),
-        ),
+      child: Column(
+        children: [
+          BlurryContainer(
+            blur: 2,
+            padding: EdgeInsets.zero,
+            borderRadius: BorderRadius.circular(3),
+            child: Container(
+              width: 320,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
+                  controller: _emailController,
+                  obscureText: false,
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Name',
+                      hintStyle: TextStyle(color: Colors.white70)),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

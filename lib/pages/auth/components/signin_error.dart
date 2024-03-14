@@ -1,3 +1,4 @@
+import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
 import '../../../routes/app_routes.dart';
 
@@ -25,13 +26,42 @@ class _SignInDefaultState extends State<SignInError> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        elevation: 5,
+        shape: const BeveledRectangleBorder(),
+        backgroundColor: Colors.black87,
+        onPressed: () {
+          _formKey.currentState!.validate();
+        },
+        label: const Row(
+          children: [
+            Text(
+              "SIGN IN",
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Mulish'),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              size: 20,
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: [
           Container(
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/first_img.jpeg"),
-                    fit: BoxFit.cover)),
+              image: DecorationImage(
+                  image: AssetImage("assets/images/first_img.jpeg"),
+                  fit: BoxFit.cover),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 195),
@@ -62,10 +92,6 @@ class _SignInDefaultState extends State<SignInError> {
                     height: 30,
                   ),
                   const TextNavigateButton(),
-                  const SizedBox(
-                    height: 250,
-                  ),
-                  const SignInButton(),
                 ],
               ),
             ),
@@ -80,70 +106,44 @@ class _SignInDefaultState extends State<SignInError> {
       width: 320,
       height: 40,
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.circular(3),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: TextFormField(
-          controller: _passwordController,
-          keyboardType: TextInputType.emailAddress,
-          obscureText: true,
-          decoration: const InputDecoration(
-              border: InputBorder.none,
-              suffixIcon: Icon(
-                Icons.remove_red_eye_outlined,
-                color: Colors.grey,
+      child: Column(
+        children: [
+          BlurryContainer(
+            blur: 2,
+            padding: EdgeInsets.zero,
+            borderRadius: BorderRadius.circular(3),
+            child: Container(
+              width: 320,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
               ),
-              hintText: 'Password'),
-          validator: validateEmail,
-        ),
-      ),
-    );
-  }
-}
-
-class SignInButton extends StatelessWidget {
-  const SignInButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        SizedBox(
-          height: 50,
-          width: 127,
-          child: ElevatedButton(
-            onPressed: () {
-              _formKey.currentState!.validate();
-            },
-            style: ElevatedButton.styleFrom(
-              backgroundColor: Colors.black,
-              padding: const EdgeInsets.all(15),
-              textStyle: const TextStyle(
-                  fontFamily: 'Mulish', fontSize: 20, color: Colors.white),
-            ),
-            child: const Row(
-              children: [
-                Text(
-                  "SIGN IN",
-                  style: TextStyle(color: Colors.white),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
+                  controller: _passwordController,
+                  keyboardType: TextInputType.emailAddress,
+                  obscureText: true,
+                  decoration: const InputDecoration(
+                    border: InputBorder.none,
+                    suffixIcon: Icon(
+                      Icons.remove_red_eye_outlined,
+                      color: Colors.grey,
+                    ),
+                    hintText: 'Password',
+                    hintStyle: TextStyle(color: Colors.white60),
+                  ),
+                  validator: validateEmail,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
                 ),
-                SizedBox(
-                  width: 10,
-                ),
-                Icon(
-                  Icons.arrow_forward_ios,
-                  size: 20,
-                ),
-              ],
+              ),
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }
@@ -191,19 +191,39 @@ class EmailTextformField extends StatelessWidget {
       width: 320,
       height: 40,
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.circular(3),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: TextFormField(
-          controller: _emailController,
-          obscureText: false,
-          decoration: const InputDecoration(
-              border: InputBorder.none, hintText: 'Username or email'),
-          validator: (name) =>
-              name!.length < 3 ? 'Name should be at least 3 character' : null,
-        ),
+      child: Column(
+        children: [
+          BlurryContainer(
+            blur: 2,
+            padding: EdgeInsets.zero,
+            borderRadius: BorderRadius.circular(3),
+            child: Container(
+              width: 320,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
+                  controller: _emailController,
+                  obscureText: false,
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Username or email',
+                      hintStyle: TextStyle(color: Colors.white60)),
+                  validator: (name) => name!.length < 3
+                      ? 'Name should be at least 3 character'
+                      : null,
+                  autovalidateMode: AutovalidateMode.onUserInteraction,
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
     );
   }

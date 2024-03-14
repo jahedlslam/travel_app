@@ -1,3 +1,4 @@
+import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
 import '../../../routes/app_routes.dart';
 
@@ -9,6 +10,34 @@ class ForgotPassword extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButtonLocation: FloatingActionButtonLocation.miniEndFloat,
+      floatingActionButton: FloatingActionButton.extended(
+        elevation: 5,
+        shape: const BeveledRectangleBorder(),
+        backgroundColor: Colors.black87,
+        onPressed: () {
+          Navigator.pushNamed(context, AppRoutes.successful);
+        },
+        label: const Row(
+          children: [
+            Text(
+              "SEND",
+              style: TextStyle(
+                  fontSize: 20,
+                  color: Colors.white,
+                  fontWeight: FontWeight.bold,
+                  fontFamily: 'Mulish'),
+            ),
+            SizedBox(
+              width: 5,
+            ),
+            Icon(
+              Icons.arrow_forward_ios,
+              size: 20,
+            ),
+          ],
+        ),
+      ),
       body: Stack(
         children: [
           Container(
@@ -47,10 +76,6 @@ class ForgotPassword extends StatelessWidget {
                           ),
                         ),
                       ),
-                      const SizedBox(
-                        height: 250,
-                      ),
-                      const SendButton(),
                     ],
                   ),
                 ],
@@ -100,59 +125,36 @@ class EmailTextField extends StatelessWidget {
       width: 320,
       height: 40,
       decoration: BoxDecoration(
-        color: Colors.white,
         borderRadius: BorderRadius.circular(3),
       ),
-      child: Padding(
-        padding: const EdgeInsets.only(left: 10),
-        child: TextFormField(
-          controller: _emailController,
-          obscureText: false,
-          decoration: const InputDecoration(
-              border: InputBorder.none, hintText: 'Email'),
-        ),
+      child: Column(
+        children: [
+          BlurryContainer(
+            blur: 2,
+            padding: EdgeInsets.zero,
+            borderRadius: BorderRadius.circular(3),
+            child: Container(
+              width: 320,
+              height: 40,
+              decoration: BoxDecoration(
+                color: Colors.white.withOpacity(0.2),
+              ),
+              child: Padding(
+                padding: const EdgeInsets.only(left: 10),
+                child: TextFormField(
+                  style: const TextStyle(color: Colors.white),
+                  controller: _emailController,
+                  obscureText: false,
+                  decoration: const InputDecoration(
+                      border: InputBorder.none,
+                      hintText: 'Email',
+                      hintStyle: TextStyle(color: Colors.white60)),
+                ),
+              ),
+            ),
+          ),
+        ],
       ),
-    );
-  }
-}
-
-class SendButton extends StatelessWidget {
-  const SendButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return Row(
-      mainAxisAlignment: MainAxisAlignment.end,
-      children: [
-        ElevatedButton(
-          onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.successful);
-          },
-          style: ElevatedButton.styleFrom(
-            backgroundColor: Colors.black,
-            padding: const EdgeInsets.all(15),
-            textStyle: const TextStyle(
-                fontFamily: 'Mulish', fontSize: 20, color: Colors.white),
-          ),
-          child: const Row(
-            children: [
-              Text(
-                "SEND",
-                style: TextStyle(color: Colors.white),
-              ),
-              SizedBox(
-                width: 10,
-              ),
-              Icon(
-                Icons.arrow_forward_ios,
-                size: 20,
-              ),
-            ],
-          ),
-        ),
-      ],
     );
   }
 }
