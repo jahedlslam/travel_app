@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import '../../../constants/app_color.dart';
 
 class SecuritySetting extends StatefulWidget {
   const SecuritySetting({super.key});
@@ -19,7 +20,7 @@ class _SecuritySettingState extends State<SecuritySetting> {
       floatingActionButton: FloatingActionButton.extended(
         elevation: 5,
         shape: const BeveledRectangleBorder(),
-        backgroundColor: Colors.black87,
+        backgroundColor: AppColors.secondaryBlackColor,
         onPressed: () {
           Navigator.pop(context);
         },
@@ -49,7 +50,7 @@ class _SecuritySettingState extends State<SecuritySetting> {
               },
               icon: Icon(
                 Icons.arrow_back_ios,
-                color: Colors.grey.shade800,
+                color: AppColors.secondaryGrayColor800,
                 size: 30,
               ),
             ),
@@ -105,7 +106,7 @@ class _SecuritySettingState extends State<SecuritySetting> {
                       ],
                     ),
                     CupertinoSwitch(
-                      activeColor: Colors.black,
+                      activeColor: AppColors.primaryColor,
                       value: submit,
                       onChanged: (value) {
                         setState(() {
@@ -150,12 +151,14 @@ class _SecuritySettingState extends State<SecuritySetting> {
                       ],
                     ),
                     CupertinoSwitch(
-                      activeColor: Colors.black,
+                      activeColor: AppColors.primaryColor,
                       value: isSwitch,
                       onChanged: (value) {
-                        setState(() {
-                          isSwitch = value;
-                        });
+                        setState(
+                          () {
+                            isSwitch = value;
+                          },
+                        );
                       },
                     ),
                   ],
@@ -195,12 +198,14 @@ class _SecuritySettingState extends State<SecuritySetting> {
                       ],
                     ),
                     CupertinoSwitch(
-                      activeColor: Colors.black,
+                      activeColor: AppColors.primaryColor,
                       value: light,
                       onChanged: (value) {
-                        setState(() {
-                          light = value;
-                        });
+                        setState(
+                          () {
+                            light = value;
+                          },
+                        );
                       },
                     ),
                   ],

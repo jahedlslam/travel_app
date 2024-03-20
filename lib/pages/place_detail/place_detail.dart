@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/models/place_detail_model.dart';
 import '../../routes/app_routes.dart';
 import 'components/place_onboarding.dart';
@@ -52,9 +53,9 @@ class _PlaceDetailState extends State<PlaceDetail> {
                   SmoothPageIndicator(
                     controller: _controller,
                     count: 3,
-                    effect: const ExpandingDotsEffect(
-                        activeDotColor: Colors.grey,
-                        dotColor: Colors.grey,
+                    effect: ExpandingDotsEffect(
+                        activeDotColor: AppColors.primaryGrayColor,
+                        dotColor: AppColors.primaryGrayColor,
                         dotHeight: 5,
                         dotWidth: 7,
                         spacing: 11),
@@ -123,9 +124,9 @@ class ArrowUpIcon extends StatelessWidget {
           onPressed: () {
             Navigator.pushNamed(context, AppRoutes.placeDetail2);
           },
-          icon: const Icon(
+          icon: Icon(
             Icons.keyboard_arrow_up_outlined,
-            color: Colors.white,
+            color: AppColors.primaryWhiteColor,
             size: 25,
           ),
         ),

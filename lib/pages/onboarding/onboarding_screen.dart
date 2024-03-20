@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:travel_app/constants/app_color.dart';
+import 'package:travel_app/pages/onboarding/components/get_start_button.dart';
 import 'package:travel_app/pages/onboarding/components/intro_page_2.dart';
 import 'package:travel_app/pages/onboarding/components/intro_page_4.dart';
-import 'package:travel_app/routes/app_routes.dart';
 import 'components/intro_page_1.dart';
 import 'components/intro_page_3.dart';
 
@@ -58,41 +59,14 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
                     SmoothPageIndicator(
                       controller: _controller,
                       count: 4,
-                      effect: const ExpandingDotsEffect(
-                          activeDotColor: Colors.grey,
-                          dotColor: Colors.grey,
+                      effect: ExpandingDotsEffect(
+                          activeDotColor: AppColors.primaryGrayColor,
+                          dotColor: AppColors.primaryGrayColor,
                           dotHeight: 5,
                           dotWidth: 7,
                           spacing: 11),
                     ),
-                    ElevatedButton(
-                      onPressed: () {
-                        Navigator.pushNamed(context, AppRoutes.menu);
-                      },
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                        padding: const EdgeInsets.all(15),
-                      ),
-                      child: const Row(
-                        children: [
-                          Text(
-                            "GET START",
-                            style: TextStyle(
-                                color: Colors.white,
-                                fontSize: 20,
-                                fontFamily: 'Mulish',
-                                fontWeight: FontWeight.bold),
-                          ),
-                          SizedBox(
-                            width: 10,
-                          ),
-                          Icon(
-                            Icons.arrow_forward_ios,
-                            size: 20,
-                          ),
-                        ],
-                      ),
-                    ),
+                    const GetStartButton(),
                   ],
                 ),
               ),

@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/models/tirp_list_model.dart';
 
 class TripList extends StatelessWidget {
@@ -12,13 +13,9 @@ class TripList extends StatelessWidget {
       width: double.infinity,
       decoration: BoxDecoration(
         borderRadius: BorderRadius.circular(10),
-        color: Colors.white,
-        boxShadow: const [
-          BoxShadow(
-              color: Colors.grey,
-              offset: Offset(-2, 2),
-              blurRadius: 5,
-              spreadRadius: 1),
+        color: AppColors.primaryWhiteColor,
+        boxShadow: [
+          AppColors.praimaryTriplistBoxShadow,
         ],
       ),
       child: Row(

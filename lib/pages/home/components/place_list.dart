@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/models/placelist_model.dart';
 
 class PlaceList extends StatelessWidget {
@@ -14,16 +15,12 @@ class PlaceList extends StatelessWidget {
           margin: const EdgeInsets.fromLTRB(35, 5, 15, 5),
           width: double.infinity,
           height: 150,
-          decoration: const BoxDecoration(
-            color: Colors.white,
+          decoration: BoxDecoration(
+            color: AppColors.primaryWhiteColor,
             boxShadow: [
-              BoxShadow(
-                  offset: Offset(-1, 8),
-                  blurRadius: 10,
-                  spreadRadius: 1,
-                  color: Colors.grey),
+              AppColors.praimaryPlaceListBoxShadow,
             ],
-            borderRadius: BorderRadius.only(
+            borderRadius: const BorderRadius.only(
               bottomLeft: Radius.circular(10),
               bottomRight: Radius.circular(10),
             ),

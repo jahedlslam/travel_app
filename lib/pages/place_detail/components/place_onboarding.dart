@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/models/place_detail_model.dart';
 
 class PlaceOnboarding extends StatelessWidget {
@@ -15,14 +16,7 @@ class PlaceOnboarding extends StatelessWidget {
       ),
       child: Container(
         decoration: BoxDecoration(
-          gradient: LinearGradient(
-            begin: Alignment.bottomRight,
-            stops: const [0.1, 0.9],
-            colors: [
-              Colors.black.withOpacity(0.9),
-              Colors.black.withOpacity(0.5)
-            ],
-          ),
+          gradient: AppColors.secondaryIndicatorGradient,
         ),
         child: Padding(
           padding: const EdgeInsets.only(left: 20.0, bottom: 130),
@@ -50,7 +44,7 @@ class PlaceOnboarding extends StatelessWidget {
                     allowHalfRating: true,
                     itemCount: 5,
                     itemSize: 15,
-                    unratedColor: Colors.grey,
+                    unratedColor: AppColors.primaryGrayColor,
                     itemPadding: const EdgeInsets.symmetric(horizontal: 2.0),
                     itemBuilder: (context, _) => const Icon(
                       Icons.star,

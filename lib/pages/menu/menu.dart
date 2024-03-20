@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/routes/app_routes.dart';
 
 class Menu extends StatefulWidget {
@@ -35,7 +36,7 @@ class _MenuState extends State<Menu> {
               },
               icon: Icon(
                 Icons.close,
-                color: Colors.grey.shade800,
+                color: AppColors.secondaryGrayColor800,
               ),
             ),
           ),
@@ -217,7 +218,7 @@ class _MenuState extends State<Menu> {
                     padding: const EdgeInsets.only(bottom: 15.0),
                     child: GestureDetector(
                       onTap: () {
-                        Navigator.pushNamed(context, AppRoutes.logout);
+                        Navigator.pushNamed(context, AppRoutes.signinDefault);
                         setState(() {
                           selectedIndex = 7;
                         });

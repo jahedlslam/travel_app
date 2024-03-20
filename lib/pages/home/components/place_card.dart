@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/models/placecard_model.dart';
 
 class PlaceCard extends StatelessWidget {
@@ -19,12 +20,8 @@ class PlaceCard extends StatelessWidget {
             fit: BoxFit.cover,
           ),
           borderRadius: BorderRadius.circular(15),
-          boxShadow: const [
-            BoxShadow(
-                offset: Offset(-7, 9),
-                blurRadius: 5,
-                spreadRadius: 1,
-                color: Colors.grey),
+          boxShadow: [
+            AppColors.praimaryBoxShadow,
           ],
         ),
         child: Container(
@@ -32,14 +29,7 @@ class PlaceCard extends StatelessWidget {
           width: 235,
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(15),
-            gradient: LinearGradient(
-              begin: Alignment.bottomRight,
-              stops: const [0.1, 0.9],
-              colors: [
-                Colors.black.withOpacity(0.9),
-                Colors.black.withOpacity(0.2)
-              ],
-            ),
+            gradient: AppColors.primarGradientColor,
           ),
           child: Stack(
             alignment: const Alignment(-1.1, 1.0),
@@ -53,7 +43,7 @@ class PlaceCard extends StatelessWidget {
                       height: 35,
                       width: 150,
                       decoration: BoxDecoration(
-                        color: Colors.grey.shade800,
+                        color: AppColors.secondaryGrayColor800,
                         borderRadius: const BorderRadius.only(
                           topRight: Radius.circular(10),
                           bottomRight: Radius.circular(10),

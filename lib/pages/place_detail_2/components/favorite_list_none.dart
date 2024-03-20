@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/pages/place_detail_2/components/picture1.dart';
 
 import '../../../routes/app_routes.dart';
@@ -72,9 +73,9 @@ class _FavoriteState extends State<Favorite> {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.arrow_back_ios_new_outlined,
-                      color: Colors.white,
+                      color: AppColors.primaryWhiteColor,
                     ),
                   ),
                   const SizedBox(
@@ -84,11 +85,12 @@ class _FavoriteState extends State<Favorite> {
                     controller: _controller,
                     count: 3,
                     effect: ExpandingDotsEffect(
-                        activeDotColor: Colors.white,
-                        dotColor: Colors.grey.shade400,
-                        dotHeight: 5,
-                        dotWidth: 7,
-                        spacing: 11),
+                      activeDotColor: AppColors.primaryWhiteColor,
+                      dotColor: AppColors.secondaryGrayColor400,
+                      dotHeight: 5,
+                      dotWidth: 7,
+                      spacing: 11,
+                    ),
                   ),
                 ],
               ),
@@ -101,8 +103,8 @@ class _FavoriteState extends State<Favorite> {
               child: Container(
                 width: MediaQuery.of(context).size.width,
                 height: MediaQuery.of(context).size.height,
-                decoration: const BoxDecoration(
-                  color: Colors.white,
+                decoration: BoxDecoration(
+                  color: AppColors.primaryWhiteColor,
                   borderRadius: BorderRadius.only(
                     topLeft: Radius.circular(30),
                     topRight: Radius.circular(30),
@@ -132,12 +134,12 @@ class _FavoriteState extends State<Favorite> {
                         ],
                       ),
                     ),
-                    const Positioned(
+                    Positioned(
                       top: 15,
                       right: 15,
                       child: Icon(
                         Icons.close,
-                        color: Colors.grey,
+                        color: AppColors.primaryGrayColor,
                       ),
                     ),
                     Positioned(
@@ -175,7 +177,8 @@ class _FavoriteState extends State<Favorite> {
                         child: Container(
                           height: 46,
                           width: 344,
-                          decoration: const BoxDecoration(color: Colors.black),
+                          decoration:
+                              BoxDecoration(color: AppColors.primaryColor),
                           child: const Center(
                             child: Text(
                               "CREATE A TRIP LIST",

@@ -1,5 +1,9 @@
-import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app/pages/auth/components/checkboxtitle.dart';
+import 'package:travel_app/pages/auth/components/sign_up_name_textfield.dart';
+import 'package:travel_app/pages/auth/components/sign_up_pass_textfield.dart';
+import 'package:travel_app/pages/auth/components/sign_up_username_textfield.dart';
+import '../../../constants/app_color.dart';
 import '../../../routes/app_routes.dart';
 
 class SignUp extends StatefulWidget {
@@ -23,7 +27,7 @@ class _SignUpState extends State<SignUp> {
       floatingActionButton: FloatingActionButton.extended(
         elevation: 5,
         shape: const BeveledRectangleBorder(),
-        backgroundColor: Colors.black87,
+        backgroundColor: AppColors.secondaryBlackColor,
         onPressed: () {
           Navigator.pushNamed(context, AppRoutes.homePage);
         },
@@ -51,32 +55,17 @@ class _SignUpState extends State<SignUp> {
         children: [
           Container(
             decoration: const BoxDecoration(
-                image: DecorationImage(
-                    image: AssetImage("assets/images/first_img.jpeg"),
-                    fit: BoxFit.cover)),
+              image: DecorationImage(
+                  image: AssetImage("assets/images/first_img.jpeg"),
+                  fit: BoxFit.cover),
+            ),
           ),
           Padding(
             padding: const EdgeInsets.only(top: 195),
             child: SingleChildScrollView(
               child: Column(
                 children: [
-                  const Row(
-                    children: [
-                      Padding(
-                        padding: EdgeInsets.only(left: 35.0),
-                        child: Text(
-                          "Sign up",
-                          style: TextStyle(
-                            wordSpacing: 2,
-                            fontSize: 44,
-                            fontWeight: FontWeight.bold,
-                            color: Colors.white,
-                            fontFamily: 'Mulish',
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
+                  const HeadSection(),
                   const SizedBox(
                     height: 55,
                   ),
@@ -96,224 +85,79 @@ class _SignUpState extends State<SignUp> {
                       const SizedBox(
                         height: 10,
                       ),
-                      const Text("Minimum 6 characters",
-                          style: TextStyle(
-                            fontSize: 16,
-                            color: Colors.white54,
-                            fontFamily: 'Mulish',
-                          ))
+                      const Text(
+                        "Minimum 6 characters",
+                        style: TextStyle(
+                          fontSize: 16,
+                          color: Colors.white54,
+                          fontFamily: 'Mulish',
+                        ),
+                      ),
                     ],
                   ),
                   const SizedBox(
                     height: 20,
                   ),
-                  _checkingSection(),
-                ],
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-
-  Padding _checkingSection() {
-    return Padding(
-      padding: const EdgeInsets.only(left: 30.0, bottom: 10),
-      child: SizedBox(
-        width: double.infinity,
-        child: Row(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Checkbox(
-                value: isChecked,
-                activeColor: Colors.grey,
-                checkColor: Colors.black,
-                tristate: true,
-                onChanged: (bool? newbool) {
-                  setState(() {
-                    isChecked = newbool;
-                  });
-                }),
-            RichText(
-              text: TextSpan(
-                children: [
-                  TextSpan(
-                      text: "Creating an account means you're okay\nwith our",
-                      style: TextStyle(
-                        fontSize: 13,
-                        color: isChecked! ? Colors.white : Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Mulish',
-                      )),
-                  TextSpan(
-                      text: ' Terms of Service & Privacy Policy \n',
-                      style: TextStyle(
-                        fontSize: 14,
-                        color: isChecked! ? Colors.white : Colors.grey,
-                        fontWeight: FontWeight.bold,
-                        fontFamily: 'Mulish',
-                      )),
-                  TextSpan(
-                    text: 'and our default Notification Settings.',
-                    style: TextStyle(
-                      fontSize: 13,
-                      color: isChecked! ? Colors.white : Colors.grey,
-                      fontWeight: FontWeight.bold,
-                      fontFamily: 'Mulish',
+                  Padding(
+                    padding: const EdgeInsets.only(left: 30.0, bottom: 10),
+                    child: SizedBox(
+                      width: double.infinity,
+                      child: Row(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Checkbox(
+                            value: isChecked,
+                            activeColor: AppColors.primaryGrayColor,
+                            checkColor: AppColors.primaryColor,
+                            side:
+                                BorderSide(color: AppColors.primaryWhiteColor),
+                            tristate: true,
+                            onChanged: (bool? newbool) {
+                              setState(
+                                () {
+                                  isChecked = newbool;
+                                },
+                              );
+                            },
+                          ),
+                          Checkboxtitle(isChecked: isChecked),
+                        ],
+                      ),
                     ),
                   ),
                 ],
               ),
             ),
-          ],
+          ),
+        ],
+      ),
+    );
+  }
+}
+
+class HeadSection extends StatelessWidget {
+  const HeadSection({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return const Row(
+      children: [
+        Padding(
+          padding: EdgeInsets.only(left: 35.0),
+          child: Text(
+            "Sign up",
+            style: TextStyle(
+              wordSpacing: 2,
+              fontSize: 44,
+              fontWeight: FontWeight.bold,
+              color: Colors.white,
+              fontFamily: 'Mulish',
+            ),
+          ),
         ),
-      ),
-    );
-  }
-}
-
-class PasswordTextformField extends StatelessWidget {
-  const PasswordTextformField({
-    super.key,
-    required TextEditingController passwordController,
-  }) : _passwordController = passwordController;
-
-  final TextEditingController _passwordController;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 320,
-      height: 40,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(3),
-      ),
-      child: Column(
-        children: [
-          BlurryContainer(
-            blur: 2,
-            padding: EdgeInsets.zero,
-            borderRadius: BorderRadius.circular(3),
-            child: Container(
-              width: 320,
-              height: 40,
-              decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: TextFormField(
-                  style: const TextStyle(color: Colors.white),
-                  controller: _passwordController,
-                  keyboardType: TextInputType.emailAddress,
-                  obscureText: true,
-                  decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Password',
-                      hintStyle: TextStyle(color: Colors.white70)),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class UsernameField extends StatelessWidget {
-  const UsernameField({
-    super.key,
-    required TextEditingController emailController,
-  }) : _emailController = emailController;
-
-  final TextEditingController _emailController;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 320,
-      height: 40,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(3),
-      ),
-      child: Column(
-        children: [
-          BlurryContainer(
-            blur: 2,
-            padding: EdgeInsets.zero,
-            borderRadius: BorderRadius.circular(3),
-            child: Container(
-              width: 320,
-              height: 40,
-              decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: TextFormField(
-                  style: const TextStyle(color: Colors.white),
-                  controller: _emailController,
-                  obscureText: false,
-                  decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Username',
-                      hintStyle: TextStyle(color: Colors.white70)),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class NameTextformField extends StatelessWidget {
-  const NameTextformField({
-    super.key,
-    required TextEditingController emailController,
-  }) : _emailController = emailController;
-
-  final TextEditingController _emailController;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 320,
-      height: 40,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(3),
-      ),
-      child: Column(
-        children: [
-          BlurryContainer(
-            blur: 2,
-            padding: EdgeInsets.zero,
-            borderRadius: BorderRadius.circular(3),
-            child: Container(
-              width: 320,
-              height: 40,
-              decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: TextFormField(
-                  style: const TextStyle(color: Colors.white),
-                  controller: _emailController,
-                  obscureText: false,
-                  decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Name',
-                      hintStyle: TextStyle(color: Colors.white70)),
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
+      ],
     );
   }
 }

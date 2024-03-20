@@ -3,22 +3,25 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/pages/home/home_page.dart';
 import 'package:travel_app/pages/menu/components/about.dart';
 import 'package:travel_app/pages/menu/components/changing_password_screen.dart';
-import 'package:travel_app/pages/menu/components/favourite_trip.dart';
+import 'package:travel_app/pages/favorite_trip/favourite_trip.dart';
 import 'package:travel_app/pages/menu/components/help.dart';
-import 'package:travel_app/pages/menu/components/history.dart';
-import 'package:travel_app/pages/menu/components/logout.dart';
+import 'package:travel_app/pages/history/history.dart';
 import 'package:travel_app/pages/menu/components/notification.dart';
-import 'package:travel_app/pages/menu/components/profile.dart';
+import 'package:travel_app/pages/profile/profile.dart';
 import 'package:travel_app/pages/menu/components/setting.dart';
 import 'package:travel_app/pages/menu/menu.dart';
 import '../pages/auth/components/forgot_password.dart';
 import '../pages/auth/components/sign_up.dart';
-import '../pages/auth/components/signin_default.dart';
+import '../pages/auth/signin_default.dart';
 import '../pages/auth/components/signin_error.dart';
 import '../pages/auth/components/successful.dart';
 import '../pages/home/components/discovery_america.dart';
 import '../pages/home/components/discovery_asia.dart';
 import '../pages/home/components/discovery_europe.dart';
+import '../pages/home/components/search_type_result.dart';
+import '../pages/menu/components/add_new_credit_card.dart';
+import '../pages/menu/components/card_management.dart';
+import '../pages/menu/components/search_screen.dart';
 import '../pages/menu/components/security_setting.dart';
 import '../pages/place_detail/place_detail.dart';
 import '../pages/onboarding/onboarding_screen.dart';
@@ -37,6 +40,7 @@ class AppRoutes {
   static const String successful = '/successful';
   static const String forgotPassword = '/forgotPassword';
   static const String homePage = '/homePage';
+  static const String searchTypeResult = '/searchTypeResult';
   static const String placeDetail = '/placeDetail';
   static const String placeDetail2 = '/placeDetail2';
   static const String discoveryAsia = '/discoveryAsia';
@@ -54,9 +58,11 @@ class AppRoutes {
   static const String about = '/about';
   static const String help = '/help';
   static const String setting = '/setting';
-  static const String logout = '/logout';
   static const String changingPassword = '/changingPassword';
   static const String securitySetting = '/securitySetting';
+  static const String searchScreen = '/searchScreen';
+  static const String cardManagement = '/cardManagement';
+  static const String addnewCreditCard = '/addnewCreditCard';
 
   static Route<dynamic>? onGenerate(RouteSettings settings) {
     final route = settings.name;
@@ -75,6 +81,8 @@ class AppRoutes {
         return CupertinoPageRoute(builder: (_) => ForgotPassword());
       case AppRoutes.homePage:
         return CupertinoPageRoute(builder: (_) => const HomePage());
+      case AppRoutes.searchTypeResult:
+        return CupertinoPageRoute(builder: (_) => const SearchTypeResult());
       case AppRoutes.placeDetail:
         return CupertinoPageRoute(builder: (_) => const PlaceDetail());
       case AppRoutes.placeDetail2:
@@ -112,10 +120,14 @@ class AppRoutes {
         return CupertinoPageRoute(builder: (_) => const Help());
       case AppRoutes.setting:
         return CupertinoPageRoute(builder: (_) => const Setting());
-      case AppRoutes.logout:
-        return CupertinoPageRoute(builder: (_) => const Logout());
       case AppRoutes.securitySetting:
         return CupertinoPageRoute(builder: (_) => const SecuritySetting());
+      case AppRoutes.searchScreen:
+        return CupertinoPageRoute(builder: (_) => const SearchScreen());
+      case AppRoutes.cardManagement:
+        return CupertinoPageRoute(builder: (_) => const CardManagement());
+      case AppRoutes.addnewCreditCard:
+        return CupertinoPageRoute(builder: (_) => const AddnewCreditCard());
 
       default:
         return errorRoute();

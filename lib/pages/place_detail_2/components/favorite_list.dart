@@ -4,6 +4,7 @@ import 'package:travel_app/models/tirp_list_model.dart';
 import 'package:travel_app/pages/place_detail_2/components/picture1.dart';
 import 'package:travel_app/pages/place_detail_2/components/trip_list.dart';
 
+import '../../../constants/app_color.dart';
 import '../../../routes/app_routes.dart';
 
 class FavoriteList extends StatefulWidget {
@@ -34,7 +35,7 @@ class _FavoriteListState extends State<FavoriteList> {
       floatingActionButton: FloatingActionButton.extended(
         elevation: 10,
         shape: const BeveledRectangleBorder(),
-        backgroundColor: Colors.black87,
+        backgroundColor: AppColors.secondaryBlackColor,
         onPressed: () {
           Navigator.pushNamed(context, AppRoutes.favoriteListNotification);
         },
@@ -99,9 +100,9 @@ class _FavoriteListState extends State<FavoriteList> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.arrow_back_ios_new_outlined,
-                        color: Colors.white,
+                        color: AppColors.primaryWhiteColor,
                       ),
                     ),
                     const SizedBox(
@@ -111,11 +112,12 @@ class _FavoriteListState extends State<FavoriteList> {
                       controller: _controller,
                       count: 3,
                       effect: ExpandingDotsEffect(
-                          activeDotColor: Colors.white,
-                          dotColor: Colors.grey.shade400,
-                          dotHeight: 5,
-                          dotWidth: 7,
-                          spacing: 11),
+                        activeDotColor: AppColors.primaryWhiteColor,
+                        dotColor: AppColors.secondaryGrayColor400,
+                        dotHeight: 5,
+                        dotWidth: 7,
+                        spacing: 11,
+                      ),
                     ),
                   ],
                 ),
@@ -128,9 +130,9 @@ class _FavoriteListState extends State<FavoriteList> {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
+                  decoration: BoxDecoration(
+                    color: AppColors.primaryWhiteColor,
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
                     ),
@@ -165,12 +167,12 @@ class _FavoriteListState extends State<FavoriteList> {
                           ],
                         ),
                       ),
-                      const Positioned(
+                      Positioned(
                         top: 15,
                         right: 15,
                         child: Icon(
                           Icons.close,
-                          color: Colors.grey,
+                          color: AppColors.primaryGrayColor,
                         ),
                       ),
                       Positioned(

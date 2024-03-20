@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/constants/app_color.dart';
 
 class ChangingPassword extends StatelessWidget {
   const ChangingPassword({super.key});
@@ -10,7 +11,7 @@ class ChangingPassword extends StatelessWidget {
       floatingActionButton: FloatingActionButton.extended(
         elevation: 5,
         shape: const BeveledRectangleBorder(),
-        backgroundColor: Colors.black87,
+        backgroundColor: AppColors.secondaryBlackColor,
         onPressed: () {
           Navigator.pop(context);
         },
@@ -40,7 +41,7 @@ class ChangingPassword extends StatelessWidget {
               },
               icon: Icon(
                 Icons.arrow_back_ios,
-                color: Colors.grey.shade800,
+                color: AppColors.secondaryGrayColor800,
                 size: 30,
               ),
             ),
@@ -76,35 +77,7 @@ class ChangingPassword extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Container(
-                  height: 40,
-                  width: 340,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade400,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade300),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade500),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      fillColor: Colors.white60,
-                      filled: true,
-                      border: InputBorder.none,
-                      hintText: 'Enter current password',
-                      hintStyle: TextStyle(
-                          fontSize: 15,
-                          color: Colors.grey.shade600,
-                          fontFamily: 'Mulish'),
-                    ),
-                  ),
-                ),
+                const CurrentPassTextfield(),
                 const SizedBox(
                   height: 20,
                 ),
@@ -119,39 +92,7 @@ class ChangingPassword extends StatelessWidget {
                 const SizedBox(
                   height: 10,
                 ),
-                Container(
-                  height: 40,
-                  width: 340,
-                  decoration: BoxDecoration(
-                    color: Colors.grey.shade400,
-                    borderRadius: BorderRadius.circular(5),
-                  ),
-                  child: TextField(
-                    obscureText: true,
-                    decoration: InputDecoration(
-                      enabledBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade300),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      focusedBorder: OutlineInputBorder(
-                        borderSide: BorderSide(color: Colors.grey.shade500),
-                        borderRadius: BorderRadius.circular(5),
-                      ),
-                      fillColor: Colors.white60,
-                      filled: true,
-                      border: InputBorder.none,
-                      hintText: 'Enter new password',
-                      hintStyle: TextStyle(
-                          fontSize: 15,
-                          color: Colors.grey.shade600,
-                          fontFamily: 'Mulish'),
-                      suffixIcon: const Icon(
-                        Icons.remove_red_eye,
-                      ),
-                      suffixIconColor: Colors.grey.shade600,
-                    ),
-                  ),
-                ),
+                const PasswordTextfield(),
                 const SizedBox(
                   height: 20,
                 ),
@@ -159,6 +100,84 @@ class ChangingPassword extends StatelessWidget {
             ),
           )
         ],
+      ),
+    );
+  }
+}
+
+class CurrentPassTextfield extends StatelessWidget {
+  const CurrentPassTextfield({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40,
+      width: 340,
+      decoration: BoxDecoration(
+        color: AppColors.secondaryGrayColor400,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: TextField(
+        obscureText: true,
+        decoration: InputDecoration(
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: AppColors.secondaryGrayColor),
+            borderRadius: BorderRadius.circular(5),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: AppColors.secondaryGrayColor500),
+            borderRadius: BorderRadius.circular(5),
+          ),
+          fillColor: Colors.white60,
+          filled: true,
+          border: InputBorder.none,
+          hintText: 'Enter current password',
+          hintStyle: TextStyle(
+              fontSize: 15, color: Colors.grey.shade600, fontFamily: 'Mulish'),
+        ),
+      ),
+    );
+  }
+}
+
+class PasswordTextfield extends StatelessWidget {
+  const PasswordTextfield({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Container(
+      height: 40,
+      width: 340,
+      decoration: BoxDecoration(
+        color: AppColors.secondaryGrayColor400,
+        borderRadius: BorderRadius.circular(5),
+      ),
+      child: TextField(
+        obscureText: true,
+        decoration: InputDecoration(
+          enabledBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: AppColors.secondaryGrayColor),
+            borderRadius: BorderRadius.circular(5),
+          ),
+          focusedBorder: OutlineInputBorder(
+            borderSide: BorderSide(color: AppColors.secondaryGrayColor500),
+            borderRadius: BorderRadius.circular(5),
+          ),
+          fillColor: Colors.white60,
+          filled: true,
+          border: InputBorder.none,
+          hintText: 'Enter new password',
+          hintStyle: TextStyle(
+              fontSize: 15, color: Colors.grey.shade600, fontFamily: 'Mulish'),
+          suffixIcon: const Icon(
+            Icons.remove_red_eye,
+          ),
+          suffixIconColor: AppColors.secondaryGrayColor600,
+        ),
       ),
     );
   }

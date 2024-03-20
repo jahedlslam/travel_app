@@ -1,6 +1,9 @@
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
-import '../../../routes/app_routes.dart';
+import 'package:travel_app/pages/auth/components/signin_email_textfield.dart';
+import 'package:travel_app/pages/auth/components/text_navigate_button.dart';
+
+import '../../../constants/app_color.dart';
 
 final _formKey = GlobalKey<FormState>();
 
@@ -30,7 +33,7 @@ class _SignInDefaultState extends State<SignInError> {
       floatingActionButton: FloatingActionButton.extended(
         elevation: 5,
         shape: const BeveledRectangleBorder(),
-        backgroundColor: Colors.black87,
+        backgroundColor: AppColors.secondaryBlackColor,
         onPressed: () {
           _formKey.currentState!.validate();
         },
@@ -84,7 +87,7 @@ class _SignInDefaultState extends State<SignInError> {
                         const SizedBox(
                           height: 25,
                         ),
-                        _passwordTextformField(),
+                        passwordTextField(),
                       ],
                     ),
                   ),
@@ -101,7 +104,7 @@ class _SignInDefaultState extends State<SignInError> {
     );
   }
 
-  Container _passwordTextformField() {
+  Container passwordTextField() {
     return Container(
       width: 320,
       height: 40,
@@ -127,97 +130,16 @@ class _SignInDefaultState extends State<SignInError> {
                   controller: _passwordController,
                   keyboardType: TextInputType.emailAddress,
                   obscureText: true,
-                  decoration: const InputDecoration(
+                  decoration: InputDecoration(
                     border: InputBorder.none,
                     suffixIcon: Icon(
                       Icons.remove_red_eye_outlined,
-                      color: Colors.grey,
+                      color: AppColors.primaryGrayColor,
                     ),
                     hintText: 'Password',
-                    hintStyle: TextStyle(color: Colors.white60),
+                    hintStyle: const TextStyle(color: Colors.white60),
                   ),
                   validator: validateEmail,
-                  autovalidateMode: AutovalidateMode.onUserInteraction,
-                ),
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class TextNavigateButton extends StatelessWidget {
-  const TextNavigateButton({
-    super.key,
-  });
-
-  @override
-  Widget build(BuildContext context) {
-    return TextButton(
-      onPressed: () => Navigator.pushNamed(context, AppRoutes.forgotPassword),
-      child: const Row(
-        children: [
-          Padding(
-            padding: EdgeInsets.only(left: 35.0),
-            child: Text(
-              "Forgot Password?",
-              style: TextStyle(
-                fontWeight: FontWeight.bold,
-                fontSize: 16,
-                color: Colors.white54,
-                fontFamily: 'Mulish',
-              ),
-            ),
-          ),
-        ],
-      ),
-    );
-  }
-}
-
-class EmailTextformField extends StatelessWidget {
-  const EmailTextformField({
-    super.key,
-    required TextEditingController emailController,
-  }) : _emailController = emailController;
-
-  final TextEditingController _emailController;
-
-  @override
-  Widget build(BuildContext context) {
-    return Container(
-      width: 320,
-      height: 40,
-      decoration: BoxDecoration(
-        borderRadius: BorderRadius.circular(3),
-      ),
-      child: Column(
-        children: [
-          BlurryContainer(
-            blur: 2,
-            padding: EdgeInsets.zero,
-            borderRadius: BorderRadius.circular(3),
-            child: Container(
-              width: 320,
-              height: 40,
-              decoration: BoxDecoration(
-                color: Colors.white.withOpacity(0.2),
-              ),
-              child: Padding(
-                padding: const EdgeInsets.only(left: 10),
-                child: TextFormField(
-                  style: const TextStyle(color: Colors.white),
-                  controller: _emailController,
-                  obscureText: false,
-                  decoration: const InputDecoration(
-                      border: InputBorder.none,
-                      hintText: 'Username or email',
-                      hintStyle: TextStyle(color: Colors.white60)),
-                  validator: (name) => name!.length < 3
-                      ? 'Name should be at least 3 character'
-                      : null,
                   autovalidateMode: AutovalidateMode.onUserInteraction,
                 ),
               ),

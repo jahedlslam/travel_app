@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/pages/place_detail_2/components/picture1.dart';
 
 import '../../../routes/app_routes.dart';
@@ -75,9 +76,9 @@ class _FavoriteTripListState extends State<FavoriteTripList> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.arrow_back_ios_new_outlined,
-                        color: Colors.white,
+                        color: AppColors.primaryWhiteColor,
                       ),
                     ),
                     const SizedBox(
@@ -87,11 +88,12 @@ class _FavoriteTripListState extends State<FavoriteTripList> {
                       controller: _controller,
                       count: 3,
                       effect: ExpandingDotsEffect(
-                          activeDotColor: Colors.white,
-                          dotColor: Colors.grey.shade400,
-                          dotHeight: 5,
-                          dotWidth: 7,
-                          spacing: 11),
+                        activeDotColor: AppColors.primaryWhiteColor,
+                        dotColor: AppColors.secondaryGrayColor400,
+                        dotHeight: 5,
+                        dotWidth: 7,
+                        spacing: 11,
+                      ),
                     ),
                   ],
                 ),
@@ -104,16 +106,16 @@ class _FavoriteTripListState extends State<FavoriteTripList> {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
+                  decoration: BoxDecoration(
+                    color: AppColors.primaryWhiteColor,
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
                     ),
                   ),
-                  child: const Stack(
+                  child: Stack(
                     children: [
-                      Positioned(
+                      const Positioned(
                         top: 20,
                         left: 25,
                         child: SizedBox(
@@ -134,7 +136,7 @@ class _FavoriteTripListState extends State<FavoriteTripList> {
                         right: 15,
                         child: Icon(
                           Icons.close,
-                          color: Colors.grey,
+                          color: AppColors.primaryGrayColor,
                         ),
                       ),
                     ],
@@ -166,23 +168,23 @@ class _FavoriteTripListState extends State<FavoriteTripList> {
                         height: 40,
                         width: 340,
                         decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
+                          color: AppColors.secondaryGrayColor200,
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: TextField(
                           obscureText: false,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.grey.shade300),
+                              borderSide: BorderSide(
+                                  color: AppColors.secondaryGrayColor),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.grey.shade500),
+                              borderSide: BorderSide(
+                                  color: AppColors.secondaryGrayColor500),
                               borderRadius: BorderRadius.circular(5),
                             ),
-                            fillColor: Colors.white60,
+                            fillColor: AppColors.primaryWhiteColor60,
                             filled: true,
                             border: InputBorder.none,
                             hintText: 'Enter your favorite tour list name',
@@ -224,23 +226,23 @@ class _FavoriteTripListState extends State<FavoriteTripList> {
                         height: 60,
                         width: 340,
                         decoration: BoxDecoration(
-                          color: Colors.grey.shade200,
+                          color: AppColors.secondaryGrayColor200,
                           borderRadius: BorderRadius.circular(5),
                         ),
                         child: TextField(
                           obscureText: false,
                           decoration: InputDecoration(
                             enabledBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.grey.shade300),
+                              borderSide: BorderSide(
+                                  color: AppColors.secondaryGrayColor),
                               borderRadius: BorderRadius.circular(5),
                             ),
                             focusedBorder: OutlineInputBorder(
-                              borderSide:
-                                  BorderSide(color: Colors.grey.shade500),
+                              borderSide: BorderSide(
+                                  color: AppColors.secondaryGrayColor500),
                               borderRadius: BorderRadius.circular(5),
                             ),
-                            fillColor: Colors.white60,
+                            fillColor: AppColors.primaryWhiteColor60,
                             filled: true,
                             border: InputBorder.none,
                             hintText:
@@ -269,7 +271,8 @@ class _FavoriteTripListState extends State<FavoriteTripList> {
                       child: Container(
                         height: 46,
                         width: 155,
-                        decoration: BoxDecoration(color: Colors.grey.shade300),
+                        decoration:
+                            BoxDecoration(color: AppColors.secondaryGrayColor),
                         child: const Center(
                           child: Text(
                             "CANCEL",
@@ -292,7 +295,8 @@ class _FavoriteTripListState extends State<FavoriteTripList> {
                       child: Container(
                         height: 46,
                         width: 155,
-                        decoration: const BoxDecoration(color: Colors.black),
+                        decoration:
+                            BoxDecoration(color: AppColors.primaryColor),
                         child: const Center(
                           child: Text(
                             "CREATE",

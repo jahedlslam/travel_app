@@ -2,6 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
 import 'package:travel_app/pages/place_detail_2/components/picture1.dart';
 
+import '../../../constants/app_color.dart';
+
 class ViewImage extends StatefulWidget {
   const ViewImage({super.key});
 
@@ -29,7 +31,7 @@ class _ViewImageState extends State<ViewImage> {
       body: Container(
         width: double.maxFinite,
         height: double.maxFinite,
-        decoration: const BoxDecoration(color: Colors.grey),
+        decoration: BoxDecoration(color: AppColors.primaryGrayColor),
         child: Stack(
           children: [
             PageView(
@@ -68,9 +70,9 @@ class _ViewImageState extends State<ViewImage> {
                     onPressed: () {
                       Navigator.pop(context);
                     },
-                    icon: const Icon(
+                    icon: Icon(
                       Icons.arrow_back_ios_new_outlined,
-                      color: Colors.white,
+                      color: AppColors.primaryWhiteColor,
                     ),
                   ),
                   const SizedBox(
@@ -80,11 +82,12 @@ class _ViewImageState extends State<ViewImage> {
                     controller: _controller,
                     count: 3,
                     effect: ExpandingDotsEffect(
-                        activeDotColor: Colors.white,
-                        dotColor: Colors.grey.shade400,
-                        dotHeight: 5,
-                        dotWidth: 7,
-                        spacing: 11),
+                      activeDotColor: AppColors.primaryWhiteColor,
+                      dotColor: AppColors.secondaryGrayColor400,
+                      dotHeight: 5,
+                      dotWidth: 7,
+                      spacing: 11,
+                    ),
                   ),
                 ],
               ),

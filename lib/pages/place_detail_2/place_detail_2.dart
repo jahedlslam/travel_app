@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'components/favorite_list_none.dart';
 import 'components/information.dart';
 import 'components/support.dart';
@@ -29,12 +30,13 @@ class _PlaceDetail2State extends State<PlaceDetail2> {
     return Scaffold(
       body: _children[_selectedIndex],
       bottomNavigationBar: BottomNavigationBar(
-        backgroundColor: Colors.black87,
+        backgroundColor: AppColors.secondaryBlackColor,
         currentIndex: _selectedIndex,
         onTap: _navigateBottomNavBar,
         showUnselectedLabels: false,
-        selectedItemColor: Colors.white,
-        unselectedItemColor: Colors.grey,
+        selectedItemColor: AppColors.primaryWhiteColor,
+        unselectedItemColor: AppColors.primaryGrayColor,
+        unselectedIconTheme: IconThemeData(color: AppColors.primaryGrayColor),
         type: BottomNavigationBarType.fixed,
         items: const [
           BottomNavigationBarItem(

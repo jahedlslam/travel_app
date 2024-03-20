@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/models/discovery_section_model.dart';
 
 class DiscoverySection extends StatelessWidget {
@@ -13,21 +14,17 @@ class DiscoverySection extends StatelessWidget {
         height: 197,
         width: 141,
         decoration: BoxDecoration(
-            borderRadius: BorderRadius.circular(20),
-            image: DecorationImage(
-                image: NetworkImage(data.imageUrl), fit: BoxFit.cover),
-            color: Colors.grey),
+          borderRadius: BorderRadius.circular(20),
+          image: DecorationImage(
+            image: NetworkImage(data.imageUrl),
+            fit: BoxFit.cover,
+          ),
+          color: AppColors.primaryGrayColor,
+        ),
         child: Container(
           decoration: BoxDecoration(
             borderRadius: BorderRadius.circular(20),
-            gradient: LinearGradient(
-              begin: Alignment.bottomRight,
-              stops: const [0.1, 0.9],
-              colors: [
-                Colors.black.withOpacity(0.8),
-                Colors.black.withOpacity(0.1)
-              ],
-            ),
+            gradient: AppColors.secondaryGradientColor,
           ),
           child: Padding(
             padding: const EdgeInsets.only(left: 15, bottom: 10),

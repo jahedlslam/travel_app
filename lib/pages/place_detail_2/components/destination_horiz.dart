@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/constants/app_color.dart';
 
 class DestinationHoriz extends StatelessWidget {
   final String imageUrl;
@@ -26,14 +27,7 @@ class DestinationHoriz extends StatelessWidget {
         width: double.infinity,
         decoration: BoxDecoration(
           borderRadius: BorderRadius.circular(10),
-          gradient: LinearGradient(
-            begin: Alignment.bottomRight,
-            stops: const [0.1, 0.5],
-            colors: [
-              Colors.black.withOpacity(0.4),
-              Colors.black.withOpacity(0.3),
-            ],
-          ),
+          gradient: AppColors.secondaryDestinationGradient,
         ),
         child: Padding(
           padding: const EdgeInsets.only(left: 20, bottom: 20),
@@ -63,10 +57,10 @@ class DestinationHoriz extends StatelessWidget {
                         fontFamily: 'Mulish',
                         fontWeight: FontWeight.bold),
                   ),
-                  const Icon(
+                  Icon(
                     Icons.arrow_forward_ios_outlined,
                     size: 12,
-                    color: Colors.white,
+                    color: AppColors.primaryWhiteColor,
                   ),
                   Text(
                     location,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_rating_bar/flutter_rating_bar.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/pages/place_detail_2/components/picture1.dart';
 
 import '../../../routes/app_routes.dart';
@@ -76,9 +77,9 @@ class _SupportState extends State<Support> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.arrow_back_ios_new_outlined,
-                        color: Colors.white,
+                        color: AppColors.primaryWhiteColor,
                       ),
                     ),
                     const SizedBox(
@@ -88,11 +89,12 @@ class _SupportState extends State<Support> {
                       controller: _controller,
                       count: 3,
                       effect: ExpandingDotsEffect(
-                          activeDotColor: Colors.white,
-                          dotColor: Colors.grey.shade400,
-                          dotHeight: 5,
-                          dotWidth: 7,
-                          spacing: 11),
+                        activeDotColor: AppColors.primaryWhiteColor,
+                        dotColor: AppColors.secondaryGrayColor400,
+                        dotHeight: 5,
+                        dotWidth: 7,
+                        spacing: 11,
+                      ),
                     ),
                   ],
                 ),
@@ -105,9 +107,9 @@ class _SupportState extends State<Support> {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
+                  decoration: BoxDecoration(
+                    color: AppColors.primaryWhiteColor,
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
                     ),
@@ -161,7 +163,7 @@ class _SupportState extends State<Support> {
                                       allowHalfRating: true,
                                       itemCount: 5,
                                       itemSize: 15,
-                                      unratedColor: Colors.grey,
+                                      unratedColor: AppColors.primaryGrayColor,
                                       itemPadding: const EdgeInsets.symmetric(
                                           horizontal: 2.0),
                                       itemBuilder: (context, _) => const Icon(
@@ -198,7 +200,7 @@ class _SupportState extends State<Support> {
                           ],
                         ),
                       ),
-                      const Positioned(
+                      Positioned(
                         top: 20,
                         right: 20,
                         child: SizedBox(
@@ -209,9 +211,9 @@ class _SupportState extends State<Support> {
                             children: [
                               Icon(
                                 Icons.close,
-                                color: Colors.grey,
+                                color: AppColors.primaryGrayColor,
                               ),
-                              Text(
+                              const Text(
                                 "\$512.0",
                                 style: TextStyle(
                                     color: Colors.red,
@@ -240,11 +242,12 @@ class _SupportState extends State<Support> {
                                 children: List.generate(
                                   (constraints.constrainWidth() / 15).floor(),
                                   (index) => SizedBox(
-                                    width: 5,
+                                    width: 8,
                                     height: 1,
                                     child: DecoratedBox(
                                       decoration: BoxDecoration(
-                                          color: Colors.grey.shade800),
+                                          color:
+                                              AppColors.secondaryGrayColor800),
                                     ),
                                   ),
                                 ),
@@ -287,7 +290,7 @@ class _SupportState extends State<Support> {
                             Container(
                               decoration: BoxDecoration(
                                   borderRadius: BorderRadius.circular(40),
-                                  color: Colors.grey.shade200),
+                                  color: AppColors.secondaryGrayColor200),
                               child: Padding(
                                 padding: const EdgeInsets.all(10.0),
                                 child: Text(
@@ -305,7 +308,7 @@ class _SupportState extends State<Support> {
                                 Container(
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(40),
-                                      color: Colors.grey.shade200),
+                                      color: AppColors.secondaryGrayColor200),
                                   child: Padding(
                                     padding: const EdgeInsets.all(10.0),
                                     child: Text(
@@ -321,7 +324,7 @@ class _SupportState extends State<Support> {
                                 Container(
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(40),
-                                      color: Colors.grey.shade200),
+                                      color: AppColors.secondaryGrayColor200),
                                   child: Padding(
                                     padding: const EdgeInsets.all(10.0),
                                     child: Text(
@@ -348,7 +351,7 @@ class _SupportState extends State<Support> {
                                 height: 40,
                                 width: 300,
                                 decoration: BoxDecoration(
-                                  color: Colors.grey.shade200,
+                                  color: AppColors.secondaryGrayColor200,
                                   borderRadius: BorderRadius.circular(5),
                                 ),
                                 child: TextField(
@@ -356,15 +359,16 @@ class _SupportState extends State<Support> {
                                   decoration: InputDecoration(
                                     enabledBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
-                                          color: Colors.grey.shade300),
+                                          color: AppColors.secondaryGrayColor),
                                       borderRadius: BorderRadius.circular(5),
                                     ),
                                     focusedBorder: OutlineInputBorder(
                                       borderSide: BorderSide(
-                                          color: Colors.grey.shade500),
+                                          color:
+                                              AppColors.secondaryGrayColor500),
                                       borderRadius: BorderRadius.circular(5),
                                     ),
-                                    fillColor: Colors.white60,
+                                    fillColor: AppColors.primaryWhiteColor60,
                                     filled: true,
                                     border: InputBorder.none,
                                     hintText: 'Starting gate',
@@ -380,9 +384,9 @@ class _SupportState extends State<Support> {
                               ),
                               InkWell(
                                 onTap: () {},
-                                child: const Icon(
+                                child: Icon(
                                   Icons.send_sharp,
-                                  color: Colors.black,
+                                  color: AppColors.primaryColor,
                                   size: 30,
                                 ),
                               ),

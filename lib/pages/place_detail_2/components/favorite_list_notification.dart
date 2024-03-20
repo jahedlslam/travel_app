@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/pages/place_detail_2/components/trip_list.dart';
 
 import '../../../models/tirp_list_model.dart';
@@ -38,7 +39,7 @@ class _FavoriteListNotificationState extends State<FavoriteListNotification> {
   Widget build(BuildContext context) {
     var size = MediaQuery.of(context).size;
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: AppColors.primaryWhiteColor,
       body: SizedBox(
         child: Positioned(
           top: 0,
@@ -47,14 +48,10 @@ class _FavoriteListNotificationState extends State<FavoriteListNotification> {
           child: Container(
             height: 165,
             width: double.infinity,
-            decoration: const BoxDecoration(
-              color: Colors.white,
+            decoration: BoxDecoration(
+              color: AppColors.primaryWhiteColor,
               boxShadow: [
-                BoxShadow(
-                    color: Colors.grey,
-                    offset: Offset(-3, 3),
-                    blurRadius: 10,
-                    spreadRadius: 5),
+                AppColors.praimaryNotificationBoxShadow,
               ],
             ),
             child: Stack(
@@ -66,7 +63,7 @@ class _FavoriteListNotificationState extends State<FavoriteListNotification> {
                     onPressed: () {},
                     icon: Icon(
                       Icons.close,
-                      color: Colors.grey.shade800,
+                      color: AppColors.secondaryGrayColor800,
                     ),
                   ),
                 ),
@@ -135,7 +132,7 @@ class _FavoriteListNotificationState extends State<FavoriteListNotification> {
                                 height: size.height * 0.005,
                                 decoration: BoxDecoration(
                                     borderRadius: BorderRadius.circular(10),
-                                    color: Colors.black),
+                                    color: AppColors.primaryColor),
                               ),
                             ),
                           ],
@@ -194,9 +191,9 @@ class _FavoriteListNotificationState extends State<FavoriteListNotification> {
                   child: Container(
                     width: MediaQuery.of(context).size.width,
                     height: MediaQuery.of(context).size.height,
-                    decoration: const BoxDecoration(
-                      color: Colors.white,
-                      borderRadius: BorderRadius.only(
+                    decoration: BoxDecoration(
+                      color: AppColors.primaryWhiteColor,
+                      borderRadius: const BorderRadius.only(
                         topLeft: Radius.circular(30),
                         topRight: Radius.circular(30),
                       ),
@@ -231,12 +228,12 @@ class _FavoriteListNotificationState extends State<FavoriteListNotification> {
                             ],
                           ),
                         ),
-                        const Positioned(
+                        Positioned(
                           top: 15,
                           right: 15,
                           child: Icon(
                             Icons.close,
-                            color: Colors.grey,
+                            color: AppColors.primaryGrayColor,
                           ),
                         ),
                         Positioned(

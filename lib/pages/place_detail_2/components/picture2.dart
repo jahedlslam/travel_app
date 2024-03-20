@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import '../../../constants/app_color.dart';
+
 class Picture2 extends StatelessWidget {
   final String image;
   const Picture2({super.key, required this.image});
@@ -17,14 +19,7 @@ class Picture2 extends StatelessWidget {
         child: Container(
           width: double.infinity,
           decoration: BoxDecoration(
-            gradient: LinearGradient(
-              begin: Alignment.bottomRight,
-              stops: const [0.1, 0.5],
-              colors: [
-                Colors.black.withOpacity(0.4),
-                Colors.black.withOpacity(0.4),
-              ],
-            ),
+            gradient: AppColors.secondaryIndicatorImageGradient,
           ),
         ),
       ),

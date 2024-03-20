@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart';
+import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/pages/place_detail_2/components/picture1.dart';
+import 'package:travel_app/pages/place_detail_2/components/timeline.dart';
 import 'package:travel_app/routes/app_routes.dart';
 
 import 'destination_horiz.dart';
@@ -41,6 +43,20 @@ class _InformationState extends State<Information> {
     }
   }
 
+  void _timeline() {
+    showModalBottomSheet(
+        context: context,
+        isScrollControlled: true,
+        shape: const RoundedRectangleBorder(
+          borderRadius: BorderRadius.vertical(
+            top: Radius.circular(20),
+          ),
+        ),
+        builder: (context) {
+          return const TimeLine();
+        });
+  }
+
   late PageController _controller;
   @override
   void initState() {
@@ -62,10 +78,8 @@ class _InformationState extends State<Information> {
       floatingActionButton: FloatingActionButton.extended(
         elevation: 5,
         shape: const BeveledRectangleBorder(),
-        backgroundColor: Colors.black87,
-        onPressed: () {
-          //  Navigator.pushNamed(context, AppRoutes.signinError);
-        },
+        backgroundColor: AppColors.secondaryBlackColor,
+        onPressed: () {},
         label: const Row(
           children: [
             Text(
@@ -133,9 +147,9 @@ class _InformationState extends State<Information> {
                       onPressed: () {
                         Navigator.pop(context);
                       },
-                      icon: const Icon(
+                      icon: Icon(
                         Icons.arrow_back_ios_new_outlined,
-                        color: Colors.white,
+                        color: AppColors.primaryWhiteColor,
                       ),
                     ),
                     const SizedBox(
@@ -145,8 +159,8 @@ class _InformationState extends State<Information> {
                       controller: _controller,
                       count: 3,
                       effect: ExpandingDotsEffect(
-                          activeDotColor: Colors.white,
-                          dotColor: Colors.grey.shade400,
+                          activeDotColor: AppColors.primaryWhiteColor,
+                          dotColor: AppColors.secondaryGrayColor800,
                           dotHeight: 5,
                           dotWidth: 7,
                           spacing: 11),
@@ -162,9 +176,9 @@ class _InformationState extends State<Information> {
                 child: Container(
                   width: MediaQuery.of(context).size.width,
                   height: MediaQuery.of(context).size.height,
-                  decoration: const BoxDecoration(
-                    color: Colors.white,
-                    borderRadius: BorderRadius.only(
+                  decoration: BoxDecoration(
+                    color: AppColors.primaryWhiteColor,
+                    borderRadius: const BorderRadius.only(
                       topLeft: Radius.circular(30),
                       topRight: Radius.circular(30),
                     ),
@@ -178,7 +192,7 @@ class _InformationState extends State<Information> {
                           height: 35,
                           width: 150,
                           decoration: BoxDecoration(
-                            color: Colors.grey.shade800,
+                            color: AppColors.secondaryGrayColor800,
                             borderRadius: const BorderRadius.only(
                               topLeft: Radius.circular(10),
                               bottomLeft: Radius.circular(10),
@@ -247,7 +261,8 @@ class _InformationState extends State<Information> {
                               height: 18,
                               decoration: BoxDecoration(
                                   borderRadius: const BorderRadius.only(
-                                      bottomLeft: Radius.circular(5)),
+                                    bottomLeft: Radius.circular(5),
+                                  ),
                                   color: Colors.blue.shade100),
                               child: const Center(
                                 child: Text(
@@ -263,15 +278,16 @@ class _InformationState extends State<Information> {
                             const SizedBox(
                               height: 15,
                             ),
-                            const Row(
+                            Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(Icons.calendar_month,
-                                    size: 18, color: Colors.grey),
-                                SizedBox(
+                                    size: 18,
+                                    color: AppColors.primaryGrayColor),
+                                const SizedBox(
                                   width: 10,
                                 ),
-                                Text(
+                                const Text(
                                   "3 DAYS ( 20 ",
                                   style: TextStyle(
                                       fontSize: 16,
@@ -282,10 +298,10 @@ class _InformationState extends State<Information> {
                                 Icon(
                                   Icons.arrow_forward_ios_rounded,
                                   size: 12,
-                                  color: Colors.grey,
+                                  color: AppColors.primaryGrayColor,
                                   weight: 10,
                                 ),
-                                Text(
+                                const Text(
                                   " 22 Mar 2019 )",
                                   style: TextStyle(
                                       fontSize: 16,
@@ -298,15 +314,16 @@ class _InformationState extends State<Information> {
                             const SizedBox(
                               height: 5,
                             ),
-                            const Row(
+                            Row(
                               crossAxisAlignment: CrossAxisAlignment.center,
                               children: [
                                 Icon(Icons.person_rounded,
-                                    size: 18, color: Colors.grey),
-                                SizedBox(
+                                    size: 18,
+                                    color: AppColors.primaryGrayColor),
+                                const SizedBox(
                                   width: 10,
                                 ),
-                                Text(
+                                const Text(
                                   "14/16",
                                   style: TextStyle(
                                       fontSize: 16,
@@ -370,7 +387,7 @@ class _InformationState extends State<Information> {
                               width: 10,
                               child: DecoratedBox(
                                 decoration: BoxDecoration(
-                                  color: Colors.grey.shade800,
+                                  color: AppColors.secondaryGrayColor800,
                                   borderRadius: const BorderRadius.only(
                                     topRight: Radius.circular(10),
                                     bottomRight: Radius.circular(10),
@@ -397,7 +414,8 @@ class _InformationState extends State<Information> {
                                           height: 1,
                                           child: DecoratedBox(
                                             decoration: BoxDecoration(
-                                                color: Colors.grey.shade800),
+                                                color: AppColors
+                                                    .secondaryGrayColor800),
                                           ),
                                         ),
                                       ),
@@ -411,7 +429,7 @@ class _InformationState extends State<Information> {
                               width: 10,
                               child: DecoratedBox(
                                 decoration: BoxDecoration(
-                                  color: Colors.grey.shade800,
+                                  color: AppColors.secondaryGrayColor800,
                                   borderRadius: const BorderRadius.only(
                                     topLeft: Radius.circular(10),
                                     bottomLeft: Radius.circular(10),
@@ -485,20 +503,19 @@ class _InformationState extends State<Information> {
                                   height: size.height * 0.005,
                                   decoration: BoxDecoration(
                                       borderRadius: BorderRadius.circular(10),
-                                      color: Colors.black),
+                                      color: AppColors.primaryColor),
                                 ),
                               ),
                             ],
                           ),
                         ),
                       ),
-                      const Positioned(
+                      Positioned(
                         left: 0,
                         right: 0,
                         top: 310,
                         child: Divider(
-                          thickness: 0,
-                          color: Colors.grey,
+                          color: AppColors.primaryGrayColor,
                         ),
                       ),
                       Positioned(
@@ -525,26 +542,32 @@ class _InformationState extends State<Information> {
                               width: 400,
                               child: ListView(
                                 scrollDirection: Axis.horizontal,
-                                children: const [
-                                  Padding(
-                                    padding:
-                                        EdgeInsets.only(left: 25, right: 25.0),
-                                    child: DestinationHoriz(
-                                      imageUrl:
-                                          "https://images.unsplash.com/photo-1560874047-8bc5a624784c?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                                      date: "May 20",
-                                      placeName: "Ha Noi ",
-                                      location: " Nogata",
+                                children: [
+                                  GestureDetector(
+                                    onTap: _timeline,
+                                    child: const Padding(
+                                      padding: EdgeInsets.only(
+                                          left: 25, right: 25.0),
+                                      child: DestinationHoriz(
+                                        imageUrl:
+                                            "https://images.unsplash.com/photo-1560874047-8bc5a624784c?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                                        date: "May 20",
+                                        placeName: "Ha Noi ",
+                                        location: " Nogata",
+                                      ),
                                     ),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsets.only(right: 25.0),
-                                    child: DestinationHoriz(
-                                      imageUrl:
-                                          "https://images.unsplash.com/photo-1560874047-8bc5a624784c?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-                                      date: "May 21",
-                                      placeName: "Ha Noi ",
-                                      location: " Nogata",
+                                  GestureDetector(
+                                    onTap: _timeline,
+                                    child: const Padding(
+                                      padding: EdgeInsets.only(right: 25.0),
+                                      child: DestinationHoriz(
+                                        imageUrl:
+                                            "https://images.unsplash.com/photo-1560874047-8bc5a624784c?q=80&w=1469&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+                                        date: "May 21",
+                                        placeName: "Ha Noi ",
+                                        location: " Nogata",
+                                      ),
                                     ),
                                   ),
                                 ],
@@ -601,47 +624,3 @@ class _InformationState extends State<Information> {
     );
   }
 }
-
-
-                      // Positioned(
-                      //   top: 550,
-                      //   right: 0,
-                      //   child: Container(
-                      //     decoration: BoxDecoration(
-                      //       boxShadow: [
-                      //         BoxShadow(
-                      //           color: Colors.black.withOpacity(0.5),
-                      //           blurRadius: 10,
-                      //           offset: const Offset(-3, 5),
-                      //           spreadRadius: 2,
-                      //         ),
-                      //       ],
-                      //     ),
-                      //     child: ElevatedButton(
-                      //       onPressed: () {},
-                      //       style: ElevatedButton.styleFrom(
-                      //         backgroundColor: Colors.black,
-                      //         padding: const EdgeInsets.all(15),
-                      //       ),
-                      //       child: const Row(
-                      //         children: [
-                      //           Text(
-                      //             "BOOK NOW",
-                      //             style: TextStyle(
-                      //                 color: Colors.white,
-                      //                 fontSize: 18,
-                      //                 fontFamily: 'Mulish',
-                      //                 fontWeight: FontWeight.bold),
-                      //           ),
-                      //           SizedBox(
-                      //             width: 5,
-                      //           ),
-                      //           Icon(
-                      //             Icons.arrow_forward_ios,
-                      //             size: 18,
-                      //           ),
-                      //         ],
-                      //       ),
-                      //     ),
-                      //   ),
-                      // // )

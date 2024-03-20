@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:travel_app/constants/app_color.dart';
+import '../../../routes/app_routes.dart';
 
 class SearchBox extends StatelessWidget {
   const SearchBox({
@@ -7,37 +9,45 @@ class SearchBox extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: 40,
-      width: 300,
-      decoration: BoxDecoration(
-        color: Colors.grey.shade200,
-        borderRadius: BorderRadius.circular(5),
-      ),
-      child: TextField(
-        obscureText: false,
-        decoration: InputDecoration(
-          enabledBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey.shade300),
-            borderRadius: BorderRadius.circular(5),
+    return Column(
+      crossAxisAlignment: CrossAxisAlignment.start,
+      children: [
+        InkWell(
+          onTap: () {
+            Navigator.pushNamed(context, AppRoutes.searchTypeResult);
+          },
+          child: Container(
+            height: 40,
+            width: 300,
+            decoration: BoxDecoration(
+              color: AppColors.primaryWhiteColor60,
+              borderRadius: BorderRadius.circular(5),
+              border: Border.all(color: AppColors.secondaryGrayColor),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.only(left: 10, right: 10),
+              child: Row(
+                crossAxisAlignment: CrossAxisAlignment.center,
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  Text(
+                    "Search for place",
+                    style: TextStyle(
+                        fontSize: 14,
+                        color: Colors.grey.shade600,
+                        fontFamily: 'Mulish'),
+                  ),
+                  Icon(
+                    Icons.search_outlined,
+                    color: AppColors.secondaryGrayColor600,
+                    size: 20,
+                  ),
+                ],
+              ),
+            ),
           ),
-          focusedBorder: OutlineInputBorder(
-            borderSide: BorderSide(color: Colors.grey.shade300),
-            borderRadius: BorderRadius.circular(5),
-          ),
-          fillColor: Colors.white60,
-          filled: true,
-          border: InputBorder.none,
-          suffixIcon: Icon(
-            Icons.search_outlined,
-            size: 20,
-            color: Colors.grey.shade600,
-          ),
-          hintText: 'Search for place',
-          hintStyle: TextStyle(
-              fontSize: 14, color: Colors.grey.shade600, fontFamily: 'Mulish'),
         ),
-      ),
+      ],
     );
   }
 }
