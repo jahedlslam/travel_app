@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/constants/app_color.dart';
-import 'components/favorite_list_none.dart';
-import 'components/information.dart';
-import 'components/support.dart';
+import '../favorite_list_none/favorite_list_none.dart';
+import '../information/information.dart';
+import '../support/support.dart';
 
 class PlaceDetail2 extends StatefulWidget {
   const PlaceDetail2({super.key});

@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/pages/favorite_trip/components/favorite_trip_search_field.dart';
+import 'package:travel_app/pages/favorite_trip/components/floating_button_label.dart';
 import '../../constants/app_color.dart';
 import '../../models/tirp_list_model.dart';
-import '../place_detail_2/components/trip_list.dart';
+import 'components/trip_list.dart';
 
 class FavoriteTrip extends StatelessWidget {
   const FavoriteTrip({super.key});
@@ -18,20 +19,7 @@ class FavoriteTrip extends StatelessWidget {
         onPressed: () {
           Navigator.pop(context);
         },
-        label: const SizedBox(
-          height: 46,
-          width: 310,
-          child: Center(
-            child: Text(
-              "CREATE A TRIP LIST",
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Mulish'),
-            ),
-          ),
-        ),
+        label: const FloatingButtonLabel(),
       ),
       body: SafeArea(
         child: SingleChildScrollView(

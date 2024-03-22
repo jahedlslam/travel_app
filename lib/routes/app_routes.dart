@@ -1,34 +1,34 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:travel_app/pages/home/home_page.dart';
-import 'package:travel_app/pages/menu/components/about.dart';
-import 'package:travel_app/pages/menu/components/changing_password_screen.dart';
+import 'package:travel_app/pages/about/about.dart';
+import 'package:travel_app/pages/change_your_password/changing_password_screen.dart';
 import 'package:travel_app/pages/favorite_trip/favourite_trip.dart';
-import 'package:travel_app/pages/menu/components/help.dart';
+import 'package:travel_app/pages/help/help.dart';
 import 'package:travel_app/pages/history/history.dart';
-import 'package:travel_app/pages/menu/components/notification.dart';
+import 'package:travel_app/pages/notification/notification.dart';
 import 'package:travel_app/pages/profile/profile.dart';
-import 'package:travel_app/pages/menu/components/setting.dart';
+import 'package:travel_app/pages/setting/setting.dart';
 import 'package:travel_app/pages/menu/menu.dart';
-import '../pages/auth/components/forgot_password.dart';
-import '../pages/auth/components/sign_up.dart';
-import '../pages/auth/signin_default.dart';
-import '../pages/auth/components/signin_error.dart';
-import '../pages/auth/components/successful.dart';
-import '../pages/home/components/discovery_america.dart';
-import '../pages/home/components/discovery_asia.dart';
-import '../pages/home/components/discovery_europe.dart';
-import '../pages/home/components/search_type_result.dart';
-import '../pages/menu/components/add_new_credit_card.dart';
-import '../pages/menu/components/card_management.dart';
-import '../pages/menu/components/search_screen.dart';
-import '../pages/menu/components/security_setting.dart';
+import '../pages/forgot_password/forgot_password.dart';
+import '../pages/sign_up/sign_up.dart';
+import '../pages/signin_default/signin_default.dart';
+import '../pages/signin_error/signin_error.dart';
+import '../pages/successful_screen/successful.dart';
+import '../pages/Discovery/components/discovery_america.dart';
+import '../pages/Discovery/components/discovery_asia.dart';
+import '../pages/Discovery/components/discovery_europe.dart';
+import '../pages/search_type_result/search_type_result.dart';
+import '../pages/add_new_credit_card/add_new_credit_card.dart';
+import '../pages/card_management/card_management.dart';
+import '../pages/search_screen/search_screen.dart';
+import '../pages/security/security_screen.dart';
 import '../pages/place_detail/place_detail.dart';
 import '../pages/onboarding/onboarding_screen.dart';
-import '../pages/place_detail_2/components/create_favorite_trip_list.dart';
-import '../pages/place_detail_2/components/favorite_list.dart';
-import '../pages/place_detail_2/components/favorite_list_notification.dart';
-import '../pages/place_detail_2/components/view_image.dart';
+import '../pages/create_favorite_trip_list/create_favorite_trip_list.dart';
+import '../pages/favorite_list/favorite_list.dart';
+import '../pages/favorite_list_notification/favorite_list_notification.dart';
+import '../pages/view/view_image.dart';
 import '../pages/place_detail_2/place_detail_2.dart';
 
 class AppRoutes {
@@ -107,7 +107,8 @@ class AppRoutes {
       case AppRoutes.profile:
         return CupertinoPageRoute(builder: (_) => const Profile());
       case AppRoutes.changingPassword:
-        return CupertinoPageRoute(builder: (_) => const ChangingPassword());
+        return CupertinoPageRoute(
+            builder: (_) => const ChangingPasswordScreen());
       case AppRoutes.history:
         return CupertinoPageRoute(builder: (_) => const History());
       case AppRoutes.notifications:
@@ -121,7 +122,7 @@ class AppRoutes {
       case AppRoutes.setting:
         return CupertinoPageRoute(builder: (_) => const Setting());
       case AppRoutes.securitySetting:
-        return CupertinoPageRoute(builder: (_) => const SecuritySetting());
+        return CupertinoPageRoute(builder: (_) => const SecurityScreen());
       case AppRoutes.searchScreen:
         return CupertinoPageRoute(builder: (_) => const SearchScreen());
       case AppRoutes.cardManagement:

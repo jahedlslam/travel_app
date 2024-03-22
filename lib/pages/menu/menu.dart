@@ -245,34 +245,3 @@ class _MenuState extends State<Menu> {
     );
   }
 }
-
-// ListView.builder(
-//                 itemCount: categories.length,
-//                 itemBuilder: (context, index) {
-//                   return GestureDetector(
-//                     onTap: () {
-//                       setState(
-//                         () {
-//                           selectedIndex = index;
-//                         },
-//                       );
-//                     },
-//                     child: Padding(
-//                       padding: const EdgeInsets.only(
-//                         bottom: 15.0,
-//                       ),
-//                       child: Text(
-//                         categories[index],
-//                         style: TextStyle(
-//                           color: index == selectedIndex
-//                               ? Colors.black
-//                               : Colors.grey.shade500,
-//                           fontFamily: 'Mulish',
-//                           fontSize: 35,
-//                           fontWeight: FontWeight.bold,
-//                         ),
-//                       ),
-//                     ),
-//                   );
-//                 },
-//               ),

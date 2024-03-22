@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/pages/profile/components/card_management.dart';
 import 'package:travel_app/pages/profile/components/date_textfield.dart';
 import 'package:travel_app/pages/profile/components/email_textfield.dart';
+import 'package:travel_app/pages/profile/components/floating_button_label.dart';
 import 'package:travel_app/pages/profile/components/name_textfield.dart';
 import 'package:travel_app/pages/profile/components/number_textfield.dart';
 import 'package:travel_app/pages/profile/components/password.dart';
@@ -28,20 +29,7 @@ class Profile extends StatelessWidget {
             },
           );
         },
-        label: const SizedBox(
-          height: 46,
-          width: 310,
-          child: Center(
-            child: Text(
-              "SAVE",
-              style: TextStyle(
-                  fontSize: 20,
-                  color: Colors.white,
-                  fontWeight: FontWeight.bold,
-                  fontFamily: 'Mulish'),
-            ),
-          ),
-        ),
+        label: const FloatingButtonLabel(),
       ),
       body: SizedBox(
         child: Stack(

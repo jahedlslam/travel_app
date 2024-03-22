@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/home/components/discovery_section.dart';
+import 'package:travel_app/pages/Discovery/discovery_section.dart';
 import '../../../models/discovery_section_model.dart';
 import '../../../routes/app_routes.dart';
 
