@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/pages/home/components/place_card.dart';
+import 'package:travel_app/pages/place_detail/place_detail.dart';
 import '../../../models/placecard_model.dart';
-import '../../../routes/app_routes.dart';
 
 class SliderSection extends StatelessWidget {
   const SliderSection({
@@ -29,34 +29,26 @@ class SliderSection extends StatelessWidget {
         SizedBox(
           height: 310,
           width: double.infinity,
-          child: ListView(
+          child: ListView.builder(
             scrollDirection: Axis.horizontal,
-            children: [
-              GestureDetector(
+            itemCount: placeCard.length,
+            itemBuilder: (context, index) {
+              return GestureDetector(
                 onTap: () {
-                  Navigator.pushNamed(context, AppRoutes.placeDetail);
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                      builder: (context) => PlaceDetail(
+                        data: placeCard[index],
+                      ),
+                    ),
+                  );
                 },
                 child: PlaceCard(
-                  data: placeCard[0],
+                  data: placeCard[index],
                 ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, AppRoutes.placeDetail);
-                },
-                child: PlaceCard(
-                  data: placeCard[1],
-                ),
-              ),
-              GestureDetector(
-                onTap: () {
-                  Navigator.pushNamed(context, AppRoutes.placeDetail);
-                },
-                child: PlaceCard(
-                  data: placeCard[2],
-                ),
-              ),
-            ],
+              );
+            },
           ),
         ),
         Padding(
@@ -79,3 +71,32 @@ class SliderSection extends StatelessWidget {
     );
   }
 }
+// ListView(
+//             scrollDirection: Axis.horizontal,
+//             children: [
+//               GestureDetector(
+//                 onTap: () {
+//                   Navigator.pushNamed(context, AppRoutes.placeDetail);
+//                 },
+//                 child: PlaceCard(
+//                   data: placeCard[0],
+//                 ),
+//               ),
+//               GestureDetector(
+//                 onTap: () {
+//                   Navigator.pushNamed(context, AppRoutes.placeDetail);
+//                 },
+//                 child: PlaceCard(
+//                   data: placeCard[1],
+//                 ),
+//               ),
+//               GestureDetector(
+//                 onTap: () {
+//                   Navigator.pushNamed(context, AppRoutes.placeDetail);
+//                 },
+//                 child: PlaceCard(
+//                   data: placeCard[2],
+//                 ),
+//               ),
+//             ],
+//           ),

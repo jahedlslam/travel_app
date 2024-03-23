@@ -1,5 +1,6 @@
 import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+import 'package:travel_app/models/discovery_section_model.dart';
 import 'package:travel_app/pages/home/home_page.dart';
 import 'package:travel_app/pages/about/about.dart';
 import 'package:travel_app/pages/change_your_password/changing_password_screen.dart';
@@ -10,20 +11,17 @@ import 'package:travel_app/pages/notification/notification.dart';
 import 'package:travel_app/pages/profile/profile.dart';
 import 'package:travel_app/pages/setting/setting.dart';
 import 'package:travel_app/pages/menu/menu.dart';
+import '../pages/discovery/discovery_screen.dart';
 import '../pages/forgot_password/forgot_password.dart';
 import '../pages/sign_up/sign_up.dart';
 import '../pages/signin_default/signin_default.dart';
 import '../pages/signin_error/signin_error.dart';
 import '../pages/successful_screen/successful.dart';
-import '../pages/Discovery/components/discovery_america.dart';
-import '../pages/Discovery/components/discovery_asia.dart';
-import '../pages/Discovery/components/discovery_europe.dart';
 import '../pages/search_type_result/search_type_result.dart';
 import '../pages/add_new_credit_card/add_new_credit_card.dart';
 import '../pages/card_management/card_management.dart';
 import '../pages/search_screen/search_screen.dart';
 import '../pages/security/security_screen.dart';
-import '../pages/place_detail/place_detail.dart';
 import '../pages/onboarding/onboarding_screen.dart';
 import '../pages/create_favorite_trip_list/create_favorite_trip_list.dart';
 import '../pages/favorite_list/favorite_list.dart';
@@ -43,9 +41,7 @@ class AppRoutes {
   static const String searchTypeResult = '/searchTypeResult';
   static const String placeDetail = '/placeDetail';
   static const String placeDetail2 = '/placeDetail2';
-  static const String discoveryAsia = '/discoveryAsia';
-  static const String discoveryEurope = '/discoveryEurope';
-  static const String discoveryAmerica = '/discoveryAmerica';
+  static const String discoveryScreen = '/discoveryScreen';
   static const String viewImage = '/viewImage';
   static const String favoriteTripList = '/favoriteTripList';
   static const String favoriteList = '/favoriteList';
@@ -63,6 +59,8 @@ class AppRoutes {
   static const String searchScreen = '/searchScreen';
   static const String cardManagement = '/cardManagement';
   static const String addnewCreditCard = '/addnewCreditCard';
+
+  static get index => null;
 
   static Route<dynamic>? onGenerate(RouteSettings settings) {
     final route = settings.name;
@@ -83,16 +81,15 @@ class AppRoutes {
         return CupertinoPageRoute(builder: (_) => const HomePage());
       case AppRoutes.searchTypeResult:
         return CupertinoPageRoute(builder: (_) => const SearchTypeResult());
-      case AppRoutes.placeDetail:
-        return CupertinoPageRoute(builder: (_) => const PlaceDetail());
+      //case AppRoutes.placeDetail:
+      //  return CupertinoPageRoute(builder: (_) => const PlaceDetail());
       case AppRoutes.placeDetail2:
         return CupertinoPageRoute(builder: (_) => const PlaceDetail2());
-      case AppRoutes.discoveryAsia:
-        return CupertinoPageRoute(builder: (_) => const DiscoveryAsia());
-      case AppRoutes.discoveryEurope:
-        return CupertinoPageRoute(builder: (_) => const DiscoveryEurope());
-      case AppRoutes.discoveryAmerica:
-        return CupertinoPageRoute(builder: (_) => const DiscoveryAmerica());
+      case AppRoutes.discoveryScreen:
+        return CupertinoPageRoute(
+            builder: (_) => DiscoveryScreen(
+                  data: discoverySection[index],
+                ));
       case AppRoutes.viewImage:
         return CupertinoPageRoute(builder: (_) => const ViewImage());
       case AppRoutes.favoriteTripList:

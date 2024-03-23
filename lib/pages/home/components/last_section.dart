@@ -1,12 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/Discovery/discovery_section.dart';
+import 'package:travel_app/pages/discovery/discovery_screen.dart';
+import 'package:travel_app/pages/home/components/discovery_section.dart';
 import '../../../models/discovery_section_model.dart';
-import '../../../routes/app_routes.dart';
 
 class LastSection extends StatelessWidget {
-  const LastSection({
-    super.key,
-  });
+  const LastSection({super.key});
 
   @override
   Widget build(BuildContext context) {
@@ -32,34 +30,26 @@ class LastSection extends StatelessWidget {
             SizedBox(
               height: 240,
               width: double.infinity,
-              child: ListView(
+              child: ListView.builder(
                 scrollDirection: Axis.horizontal,
-                children: [
-                  GestureDetector(
+                itemCount: discoverySection.length,
+                itemBuilder: (context, index) {
+                  return GestureDetector(
                     onTap: () {
-                      Navigator.pushNamed(context, AppRoutes.discoveryAsia);
+                      Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                          builder: (context) => DiscoveryScreen(
+                            data: discoverySection[index],
+                          ),
+                        ),
+                      );
                     },
                     child: DiscoverySection(
-                      data: discoverySection[0],
+                      data: discoverySection[index],
                     ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, AppRoutes.discoveryEurope);
-                    },
-                    child: DiscoverySection(
-                      data: discoverySection[1],
-                    ),
-                  ),
-                  GestureDetector(
-                    onTap: () {
-                      Navigator.pushNamed(context, AppRoutes.discoveryAmerica);
-                    },
-                    child: DiscoverySection(
-                      data: discoverySection[2],
-                    ),
-                  ),
-                ],
+                  );
+                },
               ),
             ),
           ],
