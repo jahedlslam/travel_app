@@ -5,6 +5,7 @@ import 'package:travel_app/pages/favorite_list/components/page_view_image.dart';
 import 'package:travel_app/pages/favorite_list/components/title_and_subtitle.dart';
 import 'package:travel_app/pages/favorite_list/components/top_section.dart';
 import 'package:travel_app/pages/favorite_trip/components/trip_list.dart';
+import 'package:travel_app/pages/favorite_trip_2/favorite_trip_screen.dart';
 import '../../constants/app_color.dart';
 import '../../routes/app_routes.dart';
 
@@ -97,7 +98,22 @@ class _FavoriteListState extends State<FavoriteList> {
                             itemBuilder: (context, index) {
                               return Padding(
                                 padding: const EdgeInsets.only(bottom: 20.0),
-                                child: TripList(data: tripList[index]),
+                                child: GestureDetector(
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) =>
+                                            FavotriteTripScreen(
+                                          data: tripList[index],
+                                        ),
+                                      ),
+                                    );
+                                  },
+                                  child: TripList(
+                                    data: tripList[index],
+                                  ),
+                                ),
                               );
                             },
                           ),

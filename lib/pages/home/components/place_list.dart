@@ -38,7 +38,7 @@ class PlaceList extends StatelessWidget {
                       height: 8,
                     ),
                     Text(
-                      data.countryName,
+                      data.countryName!,
                       style: const TextStyle(
                           color: Colors.black,
                           fontFamily: 'Mulish',
@@ -158,7 +158,7 @@ class PlaceList extends StatelessWidget {
                                   color: data.color),
                               child: Center(
                                 child: Text(
-                                  data.category,
+                                  data.category!,
                                   style: TextStyle(
                                       fontSize: 12,
                                       color: data.fontColor,
@@ -212,7 +212,7 @@ class PlaceList extends StatelessWidget {
             child: SizedBox(
               width: 96,
               child: Image.network(
-                data.image,
+                data.image!,
                 fit: BoxFit.cover,
               ),
             ),

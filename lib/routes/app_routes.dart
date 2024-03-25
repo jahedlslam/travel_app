@@ -3,7 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:travel_app/models/discovery_section_model.dart';
 import 'package:travel_app/pages/home/home_page.dart';
 import 'package:travel_app/pages/about/about.dart';
-import 'package:travel_app/pages/change_your_password/changing_password_screen.dart';
+import 'package:travel_app/pages/changing_password/changing_password_screen.dart';
 import 'package:travel_app/pages/favorite_trip/favourite_trip.dart';
 import 'package:travel_app/pages/help/help.dart';
 import 'package:travel_app/pages/history/history.dart';
@@ -11,6 +11,7 @@ import 'package:travel_app/pages/notification/notification.dart';
 import 'package:travel_app/pages/profile/profile.dart';
 import 'package:travel_app/pages/setting/setting.dart';
 import 'package:travel_app/pages/menu/menu.dart';
+import 'package:travel_app/pages/my_tour/my_tour.dart';
 import '../pages/discovery/discovery_screen.dart';
 import '../pages/forgot_password/forgot_password.dart';
 import '../pages/sign_up/sign_up.dart';
@@ -39,7 +40,6 @@ class AppRoutes {
   static const String forgotPassword = '/forgotPassword';
   static const String homePage = '/homePage';
   static const String searchTypeResult = '/searchTypeResult';
-  static const String placeDetail = '/placeDetail';
   static const String placeDetail2 = '/placeDetail2';
   static const String discoveryScreen = '/discoveryScreen';
   static const String viewImage = '/viewImage';
@@ -59,6 +59,7 @@ class AppRoutes {
   static const String searchScreen = '/searchScreen';
   static const String cardManagement = '/cardManagement';
   static const String addnewCreditCard = '/addnewCreditCard';
+  static const String myTour = '/myTour';
 
   static get index => null;
 
@@ -81,8 +82,6 @@ class AppRoutes {
         return CupertinoPageRoute(builder: (_) => const HomePage());
       case AppRoutes.searchTypeResult:
         return CupertinoPageRoute(builder: (_) => const SearchTypeResult());
-      //case AppRoutes.placeDetail:
-      //  return CupertinoPageRoute(builder: (_) => const PlaceDetail());
       case AppRoutes.placeDetail2:
         return CupertinoPageRoute(builder: (_) => const PlaceDetail2());
       case AppRoutes.discoveryScreen:
@@ -126,6 +125,8 @@ class AppRoutes {
         return CupertinoPageRoute(builder: (_) => const CardManagement());
       case AppRoutes.addnewCreditCard:
         return CupertinoPageRoute(builder: (_) => const AddnewCreditCard());
+      case AppRoutes.myTour:
+        return CupertinoPageRoute(builder: (_) => const MyTour());
 
       default:
         return errorRoute();

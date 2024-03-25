@@ -14,7 +14,7 @@ List<TripListModel> tripList = [
   TripListModel(
       image:
           "https://images.unsplash.com/photo-1555979864-7a8f9b4fddf8?q=80&w=1471&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-      countryName: "VIET NAM TOURIMS",
+      countryName: "VIET NAM",
       tours: "7 Tours",
       title: "Vietnam is an extremely happy and friendly country."),
   TripListModel(

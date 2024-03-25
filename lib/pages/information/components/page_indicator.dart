@@ -17,7 +17,7 @@ class PageIndicator extends StatelessWidget {
       count: 3,
       effect: ExpandingDotsEffect(
           activeDotColor: AppColors.primaryWhiteColor,
-          dotColor: AppColors.primaryWhiteColor,
+          dotColor: AppColors.secondaryGrayColor,
           dotHeight: 5,
           dotWidth: 7,
           spacing: 11),

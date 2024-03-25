@@ -11,7 +11,7 @@ class GetStartButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.pushNamed(context, AppRoutes.homePage);
+        Navigator.pushNamed(context, AppRoutes.placeDetail2);
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: AppColors.primaryColor,

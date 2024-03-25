@@ -25,7 +25,10 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
           children: [
             Stack(
               children: [
-                TopImage(widget: widget),
+                Hero(
+                    transitionOnUserGestures: true,
+                    tag: widget.data.imageUrl,
+                    child: TopImage(widget: widget)),
                 Positioned(
                   bottom: 10,
                   left: 20,
@@ -47,8 +50,7 @@ class _DiscoveryScreenState extends State<DiscoveryScreen> {
                       const CustomTabBar(),
                       Padding(
                         padding: const EdgeInsets.only(top: 1),
-                        child: //Text("${tabs[current]} tab content"),
-                            Expanded(
+                        child: Expanded(
                           child: ListView.builder(
                             itemCount: placeList.length,
                             physics: const NeverScrollableScrollPhysics(),

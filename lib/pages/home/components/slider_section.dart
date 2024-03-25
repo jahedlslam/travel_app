@@ -71,32 +71,3 @@ class SliderSection extends StatelessWidget {
     );
   }
 }
-// ListView(
-//             scrollDirection: Axis.horizontal,
-//             children: [
-//               GestureDetector(
-//                 onTap: () {
-//                   Navigator.pushNamed(context, AppRoutes.placeDetail);
-//                 },
-//                 child: PlaceCard(
-//                   data: placeCard[0],
-//                 ),
-//               ),
-//               GestureDetector(
-//                 onTap: () {
-//                   Navigator.pushNamed(context, AppRoutes.placeDetail);
-//                 },
-//                 child: PlaceCard(
-//                   data: placeCard[1],
-//                 ),
-//               ),
-//               GestureDetector(
-//                 onTap: () {
-//                   Navigator.pushNamed(context, AppRoutes.placeDetail);
-//                 },
-//                 child: PlaceCard(
-//                   data: placeCard[2],
-//                 ),
-//               ),
-//             ],
-//           ),

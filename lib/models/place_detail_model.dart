@@ -62,28 +62,27 @@ List<PlaceDetailModel> placeDetail = [
     price: 750,
   ),
 ];
-
-  // PlaceDetailModel(
-  //     bgUrl:
-  //         "https://images.unsplash.com/photo-1546412414-e1885259563a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZHViYWl8ZW58MHx8MHx8fDA%3D",
-  //     countryName: "Dubai",
-  //     review: 5495,
-  //     cityName: "Abu Dhabi",
-  //     month: "July",
-  //     date: 10,
-  //     year: 2024,
-  //     caption:
-  //         "The Ionian Islands are splendid, cinematic paradise. The waters are bluest blue, the sands are achingly silky and smooth.",
-  //     price: 960),
-  // PlaceDetailModel(
-  //     bgUrl:
-  //         "https://images.unsplash.com/photo-1593031376239-a2551cc09c3e?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  //     countryName: "Afganistan",
-  //     review: 3212,
-  //     cityName: "Kabul",
-  //     month: "March",
-  //     date: 18,
-  //     year: 2024,
-  //     caption:
-  //         "The Ionian Islands are splendid, cinematic paradise. The waters are bluest blue, the sands are achingly silky and smooth.",
-  //     price: 650),
+//  PlaceDetailModel(
+//       bgUrl:
+//           "https://images.unsplash.com/photo-1546412414-e1885259563a?w=400&auto=format&fit=crop&q=60&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Nnx8ZHViYWl8ZW58MHx8MHx8fDA%3D",
+//       countryName: "Dubai",
+//       review: 5495,
+//       placeName: "Abu Dhabi",
+//       month: "July",
+//       date: 10,
+//       year: 2024,
+//       caption:
+//           "The Ionian Islands are splendid, cinematic paradise. The waters are bluest blue, the sands are achingly silky and smooth.",
+//       price: 960),
+//   PlaceDetailModel(
+//       bgUrl:
+//           "https://images.unsplash.com/photo-1593031376239-a2551cc09c3e?q=80&w=1335&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
+//       countryName: "Afganistan",
+//       review: 3212,
+//       placeName: "Kabul",
+//       month: "March",
+//       date: 18,
+//       year: 2024,
+//       caption:
+//           "The Ionian Islands are splendid, cinematic paradise. The waters are bluest blue, the sands are achingly silky and smooth.",
+//       price: 650),

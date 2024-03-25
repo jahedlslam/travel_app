@@ -6,7 +6,7 @@ import 'package:travel_app/pages/place_detail/components/arrow_left_icon.dart';
 import 'package:travel_app/pages/place_detail/components/arrow_up_icon.dart';
 import 'package:travel_app/pages/place_detail/components/booking_button.dart';
 import 'package:travel_app/pages/place_detail/components/page_indicator.dart';
-import '../place_onboarding/place_onboarding.dart';
+import 'components/place_onboarding.dart';
 
 class PlaceDetail extends StatefulWidget {
   const PlaceDetail({super.key, required PlaceCardModel data});

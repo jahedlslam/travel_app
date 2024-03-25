@@ -1,9 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/constants/app_color.dart';
-import 'package:travel_app/pages/information/components/about_section.dart';
 import 'package:travel_app/pages/information/components/country_and_category.dart';
 import 'package:travel_app/pages/information/components/custom_tab_bar.dart';
-import 'package:travel_app/pages/information/components/destination_details.dart';
 import 'package:travel_app/pages/information/components/discount_section.dart';
 import 'package:travel_app/pages/information/components/dotted_line.dart';
 import 'package:travel_app/pages/information/components/floating_button_label.dart';
@@ -12,6 +10,7 @@ import 'package:travel_app/pages/information/components/lenght_of_stay.dart';
 import 'package:travel_app/pages/information/components/page_indicator.dart';
 import 'package:travel_app/pages/information/components/page_view_image.dart';
 import 'package:travel_app/pages/information/components/tour_code.dart';
+import 'package:travel_app/routes/app_routes.dart';
 
 class Information extends StatefulWidget {
   const Information({super.key});
@@ -42,7 +41,9 @@ class _InformationState extends State<Information> {
         elevation: 5,
         shape: const BeveledRectangleBorder(),
         backgroundColor: AppColors.secondaryBlackColor,
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushNamed(context, AppRoutes.myTour);
+        },
         label: const FloatingButtonLabel(),
       ),
       body: SingleChildScrollView(
@@ -125,8 +126,8 @@ class _InformationState extends State<Information> {
                         child: DottedLine(),
                       ),
                       const Positioned(
-                        left: 0,
                         top: 260,
+                        left: 0,
                         right: 0,
                         child: CustomTabBar(),
                       ),
@@ -136,21 +137,6 @@ class _InformationState extends State<Information> {
                         top: 310,
                         child: Divider(
                           color: AppColors.primaryGrayColor,
-                        ),
-                      ),
-                      const Positioned(
-                        top: 340,
-                        bottom: 0,
-                        child: Column(
-                          crossAxisAlignment: CrossAxisAlignment.start,
-                          children: [
-                            DestinationDetails(),
-                            Padding(
-                              padding: EdgeInsets.only(
-                                  left: 25.0, top: 20, bottom: 10),
-                              child: AboutSection(),
-                            ),
-                          ],
                         ),
                       ),
                     ],

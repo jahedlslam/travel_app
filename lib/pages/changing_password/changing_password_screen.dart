@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/constants/app_color.dart';
-import 'package:travel_app/pages/change_your_password/components/current_pass_field.dart';
-import 'package:travel_app/pages/change_your_password/components/password_text_field.dart';
+import 'package:travel_app/pages/changing_password/components/current_pass_field.dart';
+import 'package:travel_app/pages/changing_password/components/password_text_field.dart';
 
 class ChangingPasswordScreen extends StatelessWidget {
   const ChangingPasswordScreen({super.key});

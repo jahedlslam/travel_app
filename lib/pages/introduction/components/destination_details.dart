@@ -30,7 +30,7 @@ class _DestinationDetailsState extends State<DestinationDetails> {
       crossAxisAlignment: CrossAxisAlignment.start,
       children: [
         const Padding(
-          padding: EdgeInsets.only(left: 25.0),
+          padding: EdgeInsets.only(left: 25.0, top: 10),
           child: Text(
             "Destination",
             style: TextStyle(

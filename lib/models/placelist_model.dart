@@ -1,31 +1,31 @@
 import 'package:flutter/material.dart';
 
 class PlaceListModel {
-  final String image;
-  final String countryName;
-  final String placeName;
-  final String month;
-  final int date;
-  final int year;
-  final int seat;
-  final int totalmoney;
-  final int discountMoney;
-  final String category;
-  final Color color;
-  final Color fontColor;
+  String? image;
+  String? countryName;
+  String? placeName;
+  String? month;
+  int? date;
+  int? year;
+  int? seat;
+  int? totalmoney;
+  int? discountMoney;
+  String? category;
+  Color? color;
+  Color? fontColor;
   PlaceListModel(
-      {required this.image,
-      required this.countryName,
-      required this.placeName,
-      required this.month,
-      required this.date,
-      required this.year,
-      required this.seat,
-      required this.totalmoney,
-      required this.discountMoney,
-      required this.category,
-      required this.color,
-      required this.fontColor});
+      {this.image,
+      this.countryName,
+      this.placeName,
+      this.month,
+      this.date,
+      this.year,
+      this.seat,
+      this.totalmoney,
+      this.discountMoney,
+      this.category,
+      this.color,
+      this.fontColor});
 }
 
 List<PlaceListModel> placeList = [

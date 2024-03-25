@@ -70,7 +70,7 @@ class AppColors {
   );
   static BoxShadow praimaryPlaceListBoxShadow = const BoxShadow(
     offset: Offset(-1, 8),
-    blurRadius: 10,
+    blurRadius: 5,
     spreadRadius: 1,
     color: Colors.grey,
   );

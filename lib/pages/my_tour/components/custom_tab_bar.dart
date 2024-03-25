@@ -1,24 +1,22 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/introduction/indroduction_tab.dart';
-import 'package:travel_app/pages/information/components/path_tab.dart';
-import 'package:travel_app/pages/review/review_tab.dart';
+import 'package:travel_app/pages/my_tour/components/basic_price_bar.dart';
+import 'package:travel_app/pages/my_tour/components/terms_required_bar.dart';
 import '../../../constants/app_color.dart';
 
-class CustomTabBar extends StatelessWidget {
-  const CustomTabBar({super.key});
+class CustomTourTabBar extends StatelessWidget {
+  const CustomTourTabBar({super.key});
 
   @override
   Widget build(BuildContext context) {
     return DefaultTabController(
-      length: 3,
+      length: 2,
       child: Column(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           SizedBox(
             height: 45,
-            width: double.infinity,
+            width: 350,
             child: TabBar(
-              labelPadding: const EdgeInsets.only(left: 20),
               labelColor: AppColors.primaryColor,
               labelStyle: const TextStyle(
                   fontFamily: 'Mulish',
@@ -32,12 +30,13 @@ class CustomTabBar extends StatelessWidget {
               indicatorColor: AppColors.primaryColor,
               indicatorWeight: 3,
               indicatorSize: TabBarIndicatorSize.label,
-              indicatorPadding: const EdgeInsets.only(right: 15),
+              indicatorPadding: const EdgeInsets.only(right: 30),
               tabs: const [
-                Tab(text: "Introduction"),
-                Tab(text: "Path"),
                 Tab(
-                  text: "Review",
+                  text: "Basic price",
+                ),
+                Tab(
+                  text: "Terms required",
                 ),
               ],
             ),
@@ -47,9 +46,8 @@ class CustomTabBar extends StatelessWidget {
             height: 1000,
             child: TabBarView(
               children: [
-                IntroductionTab(),
-                PathTab(),
-                ReviewTab(),
+                BasicPriceBar(),
+                TermsRequiredBar(),
               ],
             ),
           ),

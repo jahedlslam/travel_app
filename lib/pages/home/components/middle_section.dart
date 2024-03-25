@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/pages/home/components/place_list.dart';
-
+import 'package:travel_app/routes/app_routes.dart';
 import '../../../models/placelist_model.dart';
 
 class MiddleSection extends StatelessWidget {
@@ -21,46 +21,17 @@ class MiddleSection extends StatelessWidget {
             itemBuilder: (context, index) {
               return Padding(
                 padding: const EdgeInsets.only(top: 10.0),
-                child: PlaceList(data: placeList[index]),
+                child: GestureDetector(
+                  onTap: () {
+                    Navigator.pushNamed(context, AppRoutes.placeDetail2);
+                  },
+                  child: PlaceList(
+                    data: placeList[index],
+                  ),
+                ),
               );
             },
           ),
-          //child: (Text("${tabs[0]} tab content"),
-          // child: ListView(
-          //   scrollDirection: Axis.horizontal,
-          //   children: [
-          //     GestureDetector(
-          //       onTap: () {
-          //         // Navigator.pushNamed(
-          //         //     context, AppRoutes.placeDetail);
-          //       },
-          //       child: Padding(
-          //         padding: const EdgeInsets.only(top: 10.0),
-          //         child: PlaceList(data: placeList[0]),
-          //       ),
-          //     ),
-          //     GestureDetector(
-          //       onTap: () {
-          //         // Navigator.pushNamed(
-          //         //     context, AppRoutes.placeDetail);
-          //       },
-          //       child: Padding(
-          //         padding: const EdgeInsets.only(top: 10.0),
-          //         child: PlaceList(data: placeList[1]),
-          //       ),
-          //     ),
-          //     GestureDetector(
-          //       onTap: () {
-          //         // Navigator.pushNamed(
-          //         //     context, AppRoutes.placeDetail);
-          //       },
-          //       child: Padding(
-          //         padding: const EdgeInsets.only(top: 10.0),
-          //         child: PlaceList(data: placeList[2]),
-          //       ),
-          //     ),
-          //  ],
-          // ),
         ),
         Padding(
           padding: const EdgeInsets.only(

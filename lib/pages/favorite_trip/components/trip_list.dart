@@ -22,14 +22,18 @@ class TripList extends StatelessWidget {
         children: [
           Padding(
             padding: const EdgeInsets.all(10.0),
-            child: SizedBox(
-              width: 100,
-              height: 85,
-              child: ClipRRect(
-                borderRadius: BorderRadius.circular(10),
-                child: Image.network(
-                  data.image,
-                  fit: BoxFit.cover,
+            child: Hero(
+              transitionOnUserGestures: true,
+              tag: data.image,
+              child: SizedBox(
+                width: 100,
+                height: 85,
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(10),
+                  child: Image.network(
+                    data.image,
+                    fit: BoxFit.cover,
+                  ),
                 ),
               ),
             ),
