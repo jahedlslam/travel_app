@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/constants/app_color.dart';
-import 'package:travel_app/pages/home/components/custom_tab_bar.dart';
+import 'package:travel_app/pages/discovery/components/custom_tab_bar.dart';
 import 'package:travel_app/pages/home/components/head_section.dart';
 import 'package:travel_app/pages/home/components/middle_section.dart';
 import 'package:travel_app/pages/home/components/slider_section.dart';

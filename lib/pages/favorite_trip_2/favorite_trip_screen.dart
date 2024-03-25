@@ -5,7 +5,7 @@ import 'package:travel_app/pages/favorite_trip_2/components/text_title.dart';
 import 'package:travel_app/pages/favorite_trip_2/components/top_image.dart';
 import 'package:travel_app/pages/search_screen/components/search_field.dart';
 import '../../models/placelist_model.dart';
-import '../home/components/place_list.dart';
+import '../place_list/place_list.dart';
 
 class FavotriteTripScreen extends StatefulWidget {
   final TripListModel data;

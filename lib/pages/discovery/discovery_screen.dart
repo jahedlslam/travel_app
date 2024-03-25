@@ -6,7 +6,7 @@ import 'package:travel_app/pages/discovery/components/description.dart';
 import 'package:travel_app/pages/discovery/components/top_image.dart';
 import 'package:travel_app/pages/home/components/head_section.dart';
 import '../../models/placelist_model.dart';
-import '../home/components/place_list.dart';
+import '../place_list/place_list.dart';
 
 class DiscoveryScreen extends StatefulWidget {
   final DiscoverySectionModel data;

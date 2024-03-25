@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../../../constants/app_color.dart';
 
 class CustomTabBar extends StatefulWidget {
   const CustomTabBar({super.key});
@@ -9,9 +10,10 @@ class CustomTabBar extends StatefulWidget {
 
 class _CustomTabBarState extends State<CustomTabBar> {
   List<String> tabs = [
-    "Suggest",
+    "Favorite",
     "New",
   ];
+
   int current = 0;
   double changePositionedofLine() {
     switch (current) {
@@ -64,11 +66,12 @@ class _CustomTabBarState extends State<CustomTabBar> {
                     child: Padding(
                       padding: EdgeInsets.only(
                         left: index == 0 ? 20 : 22,
-                        top: 2,
+                        top: 5,
                       ),
                       child: Text(
                         tabs[index],
                         style: TextStyle(
+                            fontFamily: 'Mulish',
                             color:
                                 current == index ? Colors.black : Colors.grey,
                             fontSize: current == index ? 25 : 22,
@@ -94,7 +97,8 @@ class _CustomTabBarState extends State<CustomTabBar> {
               width: changeContainerWidth(),
               height: size.height * 0.005,
               decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(10), color: Colors.black),
+                  borderRadius: BorderRadius.circular(10),
+                  color: AppColors.primaryColor),
             ),
           ),
         ],

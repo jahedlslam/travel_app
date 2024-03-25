@@ -14,7 +14,7 @@ class HistorySearchBar extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            Navigator.pushNamed(context, AppRoutes.searchScreen);
+            Navigator.pushNamed(context, AppRoutes.searchTypeResult);
           },
           child: Container(
             height: 40,

@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import '../../../models/placelist_model.dart';
-import '../../home/components/place_list.dart';
+import '../../place_list/place_list.dart';
 
 class LastSection extends StatelessWidget {
   const LastSection({

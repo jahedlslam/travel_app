@@ -14,7 +14,7 @@ class SearchBox extends StatelessWidget {
       children: [
         InkWell(
           onTap: () {
-            Navigator.pushNamed(context, AppRoutes.searchTypeResult);
+            Navigator.pushNamed(context, AppRoutes.searchScreen);
           },
           child: Container(
             height: 40,

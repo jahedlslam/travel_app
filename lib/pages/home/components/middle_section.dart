@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/home/components/place_list.dart';
+import 'package:travel_app/pages/place_list/place_list.dart';
 import 'package:travel_app/routes/app_routes.dart';
 import '../../../models/placelist_model.dart';
 

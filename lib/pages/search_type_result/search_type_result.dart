@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/models/placelist_model.dart';
-import 'package:travel_app/pages/home/components/place_list.dart';
+import 'package:travel_app/pages/place_list/place_list.dart';
 import '../dialog_box/dialog_box.dart';
 
 class SearchTypeResult extends StatefulWidget {
