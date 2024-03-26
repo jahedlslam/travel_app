@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/models/tirp_list_model.dart';
-import 'package:travel_app/pages/favorite_trip_2/components/country_name.dart';
-import 'package:travel_app/pages/favorite_trip_2/components/text_title.dart';
-import 'package:travel_app/pages/favorite_trip_2/components/top_image.dart';
+import 'package:travel_app/pages/favorite_trip_details/components/country_name.dart';
+import 'package:travel_app/pages/favorite_trip_details/components/text_title.dart';
+import 'package:travel_app/pages/favorite_trip_details/components/top_image.dart';
 import 'package:travel_app/pages/search_screen/components/search_field.dart';
 import '../../models/placelist_model.dart';
 import '../place_list/place_list.dart';
 
-class FavotriteTripScreen extends StatefulWidget {
+class FavotriteTripDetails extends StatefulWidget {
   final TripListModel data;
-  const FavotriteTripScreen({super.key, required this.data});
+  const FavotriteTripDetails({super.key, required this.data});
 
   @override
-  State<FavotriteTripScreen> createState() => _FavotriteTripScreenState();
+  State<FavotriteTripDetails> createState() => _FavotriteTripDetailsState();
 }
 
-class _FavotriteTripScreenState extends State<FavotriteTripScreen> {
+class _FavotriteTripDetailsState extends State<FavotriteTripDetails> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(

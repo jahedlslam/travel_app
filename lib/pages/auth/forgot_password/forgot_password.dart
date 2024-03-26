@@ -1,9 +1,9 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/forgot_password/components/floating_label.dart';
-import 'package:travel_app/pages/forgot_password/components/forgot_pass_emailtextfield.dart';
-import 'package:travel_app/pages/forgot_password/components/head_section.dart';
-import '../../constants/app_color.dart';
-import '../../routes/app_routes.dart';
+import 'package:travel_app/pages/auth/forgot_password/components/floating_label.dart';
+import 'package:travel_app/pages/auth/forgot_password/components/forgot_pass_emailtextfield.dart';
+import 'package:travel_app/pages/auth/forgot_password/components/head_section.dart';
+import '../../../constants/app_color.dart';
+import '../../../routes/app_routes.dart';
 
 class ForgotPassword extends StatelessWidget {
   ForgotPassword({super.key});

@@ -4,14 +4,14 @@ import '../favorite_list_none/favorite_list_none.dart';
 import '../information/information.dart';
 import '../support/support.dart';
 
-class PlaceDetail2 extends StatefulWidget {
-  const PlaceDetail2({super.key});
+class PlaceDetailPage extends StatefulWidget {
+  const PlaceDetailPage({super.key});
 
   @override
-  State<PlaceDetail2> createState() => _PlaceDetail2State();
+  State<PlaceDetailPage> createState() => _PlaceDetailPageState();
 }
 
-class _PlaceDetail2State extends State<PlaceDetail2> {
+class _PlaceDetailPageState extends State<PlaceDetailPage> {
   int _selectedIndex = 0;
   void _navigateBottomNavBar(int index) {
     setState(() {

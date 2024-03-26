@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/successful_screen/components/floating_button_label.dart';
-import 'package:travel_app/pages/successful_screen/components/heading_section.dart';
-import '../../constants/app_color.dart';
-import '../../routes/app_routes.dart';
+import 'package:travel_app/pages/auth/successful_screen/components/floating_button_label.dart';
+import 'package:travel_app/pages/auth/successful_screen/components/heading_section.dart';
+import '../../../constants/app_color.dart';
+import '../../../routes/app_routes.dart';
 import 'components/successful_screen_middle_section.dart';
 
 class Successful extends StatelessWidget {

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/pages/favorite_trip/components/favorite_trip_search_field.dart';
 import 'package:travel_app/pages/favorite_trip/components/floating_button_label.dart';
-import 'package:travel_app/pages/favorite_trip_2/favorite_trip_screen.dart';
+import 'package:travel_app/pages/favorite_trip_details/favorite_trip_details.dart';
 import '../../constants/app_color.dart';
 import '../../models/tirp_list_model.dart';
 import 'components/trip_list.dart';
@@ -81,7 +81,7 @@ class FavoriteTrip extends StatelessWidget {
                                 Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => FavotriteTripScreen(
+                                    builder: (context) => FavotriteTripDetails(
                                       data: tripList[index],
                                     ),
                                   ),

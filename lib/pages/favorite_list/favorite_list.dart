@@ -5,7 +5,7 @@ import 'package:travel_app/pages/favorite_list/components/page_view_image.dart';
 import 'package:travel_app/pages/favorite_list/components/title_and_subtitle.dart';
 import 'package:travel_app/pages/favorite_list/components/top_section.dart';
 import 'package:travel_app/pages/favorite_trip/components/trip_list.dart';
-import 'package:travel_app/pages/favorite_trip_2/favorite_trip_screen.dart';
+import 'package:travel_app/pages/favorite_trip_details/favorite_trip_details.dart';
 import '../../constants/app_color.dart';
 import '../../routes/app_routes.dart';
 
@@ -104,7 +104,7 @@ class _FavoriteListState extends State<FavoriteList> {
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) =>
-                                            FavotriteTripScreen(
+                                            FavotriteTripDetails(
                                           data: tripList[index],
                                         ),
                                       ),

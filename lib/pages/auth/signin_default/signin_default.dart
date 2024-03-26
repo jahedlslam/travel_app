@@ -1,10 +1,10 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/signin_default/components/floating_button_label.dart';
-import 'package:travel_app/pages/signin_default/components/heading_section.dart';
-import 'package:travel_app/pages/signin_default/components/signin_default_email_textfield.dart';
-import 'package:travel_app/pages/signin_default/components/signin_default_pass_textfield.dart';
-import '../../constants/app_color.dart';
-import '../../routes/app_routes.dart';
+import 'package:travel_app/pages/auth/signin_default/components/floating_button_label.dart';
+import 'package:travel_app/pages/auth/signin_default/components/heading_section.dart';
+import 'package:travel_app/pages/auth/signin_default/components/signin_default_email_textfield.dart';
+import 'package:travel_app/pages/auth/signin_default/components/signin_default_pass_textfield.dart';
+import '../../../constants/app_color.dart';
+import '../../../routes/app_routes.dart';
 
 class SignInDefault extends StatelessWidget {
   SignInDefault({super.key});

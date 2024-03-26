@@ -1,11 +1,11 @@
 import 'package:blurrycontainer/blurrycontainer.dart';
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/signin_error/components/email_textfield.dart';
-import 'package:travel_app/pages/signin_error/components/floating_button_label.dart';
-import 'package:travel_app/pages/signin_error/components/head_section.dart';
-import 'package:travel_app/pages/signin_error/components/text_navigate_button.dart';
+import 'package:travel_app/pages/auth/signin_error/components/email_textfield.dart';
+import 'package:travel_app/pages/auth/signin_error/components/floating_button_label.dart';
+import 'package:travel_app/pages/auth/signin_error/components/head_section.dart';
+import 'package:travel_app/pages/auth/signin_error/components/text_navigate_button.dart';
 
-import '../../constants/app_color.dart';
+import '../../../constants/app_color.dart';
 
 final _formKey = GlobalKey<FormState>();
 

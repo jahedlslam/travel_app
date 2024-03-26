@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../../place_detail_2/components/picture1.dart';
+import '../../place_detail_page/components/picture1.dart';
 
 class Images extends StatelessWidget {
   const Images({

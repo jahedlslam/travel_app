@@ -15,7 +15,7 @@ class ArrowUpIcon extends StatelessWidget {
         alignment: Alignment.bottomCenter,
         child: IconButton(
           onPressed: () {
-            Navigator.pushNamed(context, AppRoutes.placeDetail2);
+            Navigator.pushNamed(context, AppRoutes.placeDetailPage);
           },
           icon: Icon(
             Icons.keyboard_arrow_up_outlined,

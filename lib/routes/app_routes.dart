@@ -13,11 +13,11 @@ import 'package:travel_app/pages/setting/setting.dart';
 import 'package:travel_app/pages/menu/menu.dart';
 import 'package:travel_app/pages/my_tour/my_tour.dart';
 import '../pages/discovery/discovery_screen.dart';
-import '../pages/forgot_password/forgot_password.dart';
-import '../pages/sign_up/sign_up.dart';
-import '../pages/signin_default/signin_default.dart';
-import '../pages/signin_error/signin_error.dart';
-import '../pages/successful_screen/successful.dart';
+import '../pages/auth/forgot_password/forgot_password.dart';
+import '../pages/auth/sign_up/sign_up.dart';
+import '../pages/auth/signin_default/signin_default.dart';
+import '../pages/auth/signin_error/signin_error.dart';
+import '../pages/auth/successful_screen/successful.dart';
 import '../pages/search_type_result/search_type_result.dart';
 import '../pages/add_new_credit_card/add_new_credit_card.dart';
 import '../pages/card_management/card_management.dart';
@@ -28,7 +28,7 @@ import '../pages/create_favorite_trip_list/create_favorite_trip_list.dart';
 import '../pages/favorite_list/favorite_list.dart';
 import '../pages/favorite_list_notification/favorite_list_notification.dart';
 import '../pages/view/view_image.dart';
-import '../pages/place_detail_2/place_detail_2.dart';
+import '../pages/place_detail_page/place_detail_page.dart';
 
 class AppRoutes {
   static const String initial = '/';
@@ -40,7 +40,7 @@ class AppRoutes {
   static const String forgotPassword = '/forgotPassword';
   static const String homePage = '/homePage';
   static const String searchTypeResult = '/searchTypeResult';
-  static const String placeDetail2 = '/placeDetail2';
+  static const String placeDetailPage = '/placeDetailPage';
   static const String discoveryScreen = '/discoveryScreen';
   static const String viewImage = '/viewImage';
   static const String favoriteTripList = '/favoriteTripList';
@@ -82,8 +82,8 @@ class AppRoutes {
         return CupertinoPageRoute(builder: (_) => const HomePage());
       case AppRoutes.searchTypeResult:
         return CupertinoPageRoute(builder: (_) => const SearchTypeResult());
-      case AppRoutes.placeDetail2:
-        return CupertinoPageRoute(builder: (_) => const PlaceDetail2());
+      case AppRoutes.placeDetailPage:
+        return CupertinoPageRoute(builder: (_) => const PlaceDetailPage());
       case AppRoutes.discoveryScreen:
         return CupertinoPageRoute(
             builder: (_) => DiscoveryScreen(

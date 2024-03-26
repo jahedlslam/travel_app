@@ -23,7 +23,7 @@ class MiddleSection extends StatelessWidget {
                 padding: const EdgeInsets.only(top: 10.0),
                 child: GestureDetector(
                   onTap: () {
-                    Navigator.pushNamed(context, AppRoutes.placeDetail2);
+                    Navigator.pushNamed(context, AppRoutes.placeDetailPage);
                   },
                   child: PlaceList(
                     data: placeList[index],

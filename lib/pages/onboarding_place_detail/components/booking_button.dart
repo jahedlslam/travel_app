@@ -10,7 +10,7 @@ class BookingButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return ElevatedButton(
       onPressed: () {
-        Navigator.pushNamed(context, AppRoutes.placeDetail2);
+        Navigator.pushNamed(context, AppRoutes.placeDetailPage);
       },
       style: ElevatedButton.styleFrom(
         backgroundColor: Colors.black,

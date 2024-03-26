@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
-import 'package:travel_app/pages/sign_up/components/checkboxtitle.dart';
-import 'package:travel_app/pages/sign_up/components/floating_button_label.dart';
-import 'package:travel_app/pages/sign_up/components/heading_section.dart';
-import 'package:travel_app/pages/sign_up/components/name_textfield.dart';
-import 'package:travel_app/pages/sign_up/components/password_textfield.dart';
-import 'package:travel_app/pages/sign_up/components/username_textfield.dart';
-import '../../constants/app_color.dart';
-import '../../routes/app_routes.dart';
+import 'package:travel_app/pages/auth/sign_up/components/checkboxtitle.dart';
+import 'package:travel_app/pages/auth/sign_up/components/floating_button_label.dart';
+import 'package:travel_app/pages/auth/sign_up/components/heading_section.dart';
+import 'package:travel_app/pages/auth/sign_up/components/name_textfield.dart';
+import 'package:travel_app/pages/auth/sign_up/components/password_textfield.dart';
+import 'package:travel_app/pages/auth/sign_up/components/username_textfield.dart';
+import '../../../constants/app_color.dart';
+import '../../../routes/app_routes.dart';
 
 class SignUp extends StatefulWidget {
   const SignUp({super.key});

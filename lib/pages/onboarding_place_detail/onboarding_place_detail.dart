@@ -1,21 +1,21 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/models/place_detail_model.dart';
 import 'package:travel_app/models/placecard_model.dart';
-import 'package:travel_app/pages/place_detail/components/arrow_back_icon.dart';
-import 'package:travel_app/pages/place_detail/components/arrow_left_icon.dart';
-import 'package:travel_app/pages/place_detail/components/arrow_up_icon.dart';
-import 'package:travel_app/pages/place_detail/components/booking_button.dart';
-import 'package:travel_app/pages/place_detail/components/page_indicator.dart';
+import 'package:travel_app/pages/onboarding_place_detail/components/arrow_back_icon.dart';
+import 'package:travel_app/pages/onboarding_place_detail/components/arrow_left_icon.dart';
+import 'package:travel_app/pages/onboarding_place_detail/components/arrow_up_icon.dart';
+import 'package:travel_app/pages/onboarding_place_detail/components/booking_button.dart';
+import 'package:travel_app/pages/onboarding_place_detail/components/page_indicator.dart';
 import 'components/place_onboarding.dart';
 
-class PlaceDetail extends StatefulWidget {
-  const PlaceDetail({super.key, required PlaceCardModel data});
+class OnboardingPlaceDetail extends StatefulWidget {
+  const OnboardingPlaceDetail({super.key, required PlaceCardModel data});
 
   @override
-  State<PlaceDetail> createState() => _PlaceDetailState();
+  State<OnboardingPlaceDetail> createState() => _OnboardingPlaceDetailState();
 }
 
-class _PlaceDetailState extends State<PlaceDetail> {
+class _OnboardingPlaceDetailState extends State<OnboardingPlaceDetail> {
   late PageController _controller;
   @override
   void initState() {
