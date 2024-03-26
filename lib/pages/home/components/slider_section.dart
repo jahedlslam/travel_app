@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/pages/place_card/place_card.dart';
-import 'package:travel_app/pages/onboarding_place_detail/onboarding_place_detail.dart';
+import 'package:travel_app/pages/place_detail_alt/place_detail_alt.dart';
 import '../../../models/placecard_model.dart';
 
 class SliderSection extends StatelessWidget {
@@ -38,7 +38,7 @@ class SliderSection extends StatelessWidget {
                   Navigator.push(
                     context,
                     MaterialPageRoute(
-                      builder: (context) => OnboardingPlaceDetail(
+                      builder: (context) => PlaceDetailAlt(
                         data: placeCard[index],
                       ),
                     ),

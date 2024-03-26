@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/constants/app_color.dart';
 import 'package:travel_app/models/place_detail_model.dart';
-import 'package:travel_app/pages/onboarding_place_detail/components/caption.dart';
-import 'package:travel_app/pages/onboarding_place_detail/components/country_name.dart';
-import 'package:travel_app/pages/onboarding_place_detail/components/plane_takeoff.dart';
-import 'package:travel_app/pages/onboarding_place_detail/components/price_section.dart';
-import 'package:travel_app/pages/onboarding_place_detail/components/rating_and_review.dart';
+import 'package:travel_app/pages/place_detail_alt/components/caption.dart';
+import 'package:travel_app/pages/place_detail_alt/components/country_name.dart';
+import 'package:travel_app/pages/place_detail_alt/components/plane_takeoff.dart';
+import 'package:travel_app/pages/place_detail_alt/components/price_section.dart';
+import 'package:travel_app/pages/place_detail_alt/components/rating_and_review.dart';
 
 class PlaceOnboarding extends StatelessWidget {
   final PlaceDetailModel data;
