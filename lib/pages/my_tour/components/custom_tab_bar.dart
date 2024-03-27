@@ -43,7 +43,7 @@ class CustomTourTabBar extends StatelessWidget {
           ),
           const SizedBox(
             width: double.infinity,
-            height: 1000,
+            height: 2000,
             child: TabBarView(
               children: [
                 BasicPriceBar(),

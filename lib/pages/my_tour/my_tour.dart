@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:travel_app/pages/my_tour/components/custom_tab_bar.dart';
 import 'package:travel_app/pages/my_tour/components/floating_button_label.dart';
-
+import 'package:travel_app/routes/app_routes.dart';
 import '../../constants/app_color.dart';
 
 class MyTour extends StatefulWidget {
@@ -21,13 +21,13 @@ class _MyTourState extends State<MyTour> {
         shape: const BeveledRectangleBorder(),
         backgroundColor: AppColors.secondaryBlackColor,
         onPressed: () {
-          Navigator.pop(context);
+          Navigator.pushNamed(context, AppRoutes.bookingProcessingTabs);
         },
         label: const FloatingButtonLabel(),
       ),
       body: SingleChildScrollView(
         child: SizedBox(
-          height: 1000,
+          height: 1100,
           width: double.infinity,
           child: Stack(
             children: [

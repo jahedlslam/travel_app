@@ -14,9 +14,9 @@ class DottedLine extends StatelessWidget {
           mainAxisAlignment: MainAxisAlignment.spaceBetween,
           mainAxisSize: MainAxisSize.max,
           children: List.generate(
-            (constraints.constrainWidth() / 15).floor(),
+            (constraints.constrainWidth() / 10).floor(),
             (index) => SizedBox(
-              width: 8,
+              width: 5,
               height: 1,
               child: DecoratedBox(
                 decoration: BoxDecoration(color: Colors.grey.shade800),

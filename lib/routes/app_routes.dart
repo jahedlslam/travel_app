@@ -12,6 +12,7 @@ import 'package:travel_app/pages/profile/profile.dart';
 import 'package:travel_app/pages/setting/setting.dart';
 import 'package:travel_app/pages/menu/menu.dart';
 import 'package:travel_app/pages/my_tour/my_tour.dart';
+import '../pages/booking_processing_tabs/booking_processing_tabs.dart';
 import '../pages/discovery/discovery_screen.dart';
 import '../pages/auth/forgot_password/forgot_password.dart';
 import '../pages/auth/sign_up/sign_up.dart';
@@ -60,6 +61,7 @@ class AppRoutes {
   static const String cardManagement = '/cardManagement';
   static const String addnewCreditCard = '/addnewCreditCard';
   static const String myTour = '/myTour';
+  static const String bookingProcessingTabs = '/bookingProcessingTabs';
 
   static get index => null;
 
@@ -127,6 +129,9 @@ class AppRoutes {
         return CupertinoPageRoute(builder: (_) => const AddnewCreditCard());
       case AppRoutes.myTour:
         return CupertinoPageRoute(builder: (_) => const MyTour());
+      case AppRoutes.bookingProcessingTabs:
+        return CupertinoPageRoute(
+            builder: (_) => const BookingProcessingTabs());
 
       default:
         return errorRoute();
